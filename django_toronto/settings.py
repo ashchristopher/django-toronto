@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'gunicorn',
+    'registration',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -143,3 +144,12 @@ LOGGING = {
         },
     }
 }
+
+# django-registration settings
+ACCOUNT_ACTIVATION_DAYS = 7
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
