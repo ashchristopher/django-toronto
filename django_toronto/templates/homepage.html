@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load webdesign %}
+
+
+{% block body %}
+    <div id='header' class='background'>
+        <div id='header-inner'>
+        </div>
+    </div>
+    <div class='container'>
+
+        <div class='row'>
+            <div class="span8">
+                {% lorem 3 p %}
+            </div>
+            <div class="span4">
+                <h2>Upcoming Event</h2>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

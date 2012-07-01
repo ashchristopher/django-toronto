@@ -2,4 +2,27 @@ body {
     color: #4A4A4A;
     font-size: 13px;
     font-family: 'Lato', sans-serif;
+    background-image: url("../images/backgrounds/master-bg2.png");
 }
+
+#header {
+    background: url("https://s3-us-west-1.amazonaws.com/images.path.com/static/covers/8/web.jpg") no-repeat;
+    background-size: cover;
+    height: 400px;
+    background-position: 50% 50%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container {
+    padding-top: 400px;
+}
+
+#header-inner {
+    background-image: url("../images/backgrounds/bg_pixels.png");
+    height: 400px;
+    opacity: 0.4;
+}
+
