@@ -1,6 +1,7 @@
 Django==1.4
 South==0.7.5
 dj-database-url==0.2.1
+django-bootstrap-static-files==2.0.3
 django-clean==0.1.2
 django-registration==0.8
 gunicorn==0.14.5
