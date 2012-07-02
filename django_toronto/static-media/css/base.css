@@ -7,12 +7,21 @@ body {
 
 #top-bar {
     border-bottom: 1px solid #E0E0E0;
+
 }
 
 #top-bar .navbar-inner {
-    background-color: #F8F8F8;
+    background-color: #FEFEFE;
     background-image: none;
+    height: 50px;
 }
+
+#topbar a.btn {
+    color: #FFFFFF;
+    margin-top: 4px;
+    padding: 5px 14px 6px;
+}
+
 
 #top-bar ul.nav {
     float:right;
@@ -30,4 +39,8 @@ body {
 
 #main-content {
     padding-top: 50px;
+}
+
+.section {
+    padding-bottom: 35px;
 }
