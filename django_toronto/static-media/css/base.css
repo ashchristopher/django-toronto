@@ -5,19 +5,29 @@ body {
     background-image: url("../images/backgrounds/master-bg2.png");
 }
 
-#header {
+#top-bar {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+#top-bar .navbar-inner {
+    background-color: #F8F8F8;
+    background-image: none;
+}
+
+#top-bar ul.nav {
+    float:right;
+}
+
+.hero {
+    padding: 50px 0;
     background: url("https://s3-us-west-1.amazonaws.com/images.path.com/static/covers/8/web.jpg") no-repeat;
     background-size: cover;
     height: 400px;
     background-position: 50% 50%;
-    left: 0;
-    top: 0;
     width: 100%;
 }
 
-#header-inner {
-    background-image: url("../images/backgrounds/bg_pixels.png");
-    height: 400px;
-    opacity: 0.4;
-}
 
+#main-content {
+    padding-top: 50px;
+}

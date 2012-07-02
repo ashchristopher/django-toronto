@@ -4,18 +4,39 @@
 
 
 {% block body %}
-    <div id='header' class='background'>
-        <div id='header-inner'>
+<div id='top-bar' class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+              <li><a href="#nav-next-meetup">Next Meetup</a></li>
+              <li><a href="#nav-presentations">Presentations</a></li>
+              <li><a href="#contact">Careers</a></li>
+              <li><a href="#sign-up">Signup</a></li>
+              <li><a href="#login">Careers</a></li>
+            </ul>
         </div>
+      </div>
     </div>
-    <div class='container'>
 
-        <div class='row'>
-            <div class="span8">
-                {% lorem 30 p %}
+    <div class='hero'></div>
+
+    <div id='main-content' class='container'>
+
+        <div id='nav-next-meetup' class='row'>
+            <div class="span3">
+                <h2>Next Meetup</h2>
             </div>
-            <div class="span4">
-                <h2>Upcoming Event</h2>
+            <div class="span9">
+                {% lorem 3 p %}
+            </div>
+        </div>
+
+        <div id='nav-presentations' class='row'>
+            <div class="span3">
+                <h2>Presentations</h2>
+            </div>
+            <div class="span9">
+                {% lorem 3 p %}
             </div>
         </div>
     </div>
