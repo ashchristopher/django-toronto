@@ -11,13 +11,8 @@ body {
     height: 400px;
     background-position: 50% 50%;
     left: 0;
-    position: fixed;
     top: 0;
     width: 100%;
-}
-
-.container {
-    padding-top: 400px;
 }
 
 #header-inner {
