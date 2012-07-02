@@ -114,6 +114,8 @@ INSTALLED_APPS = (
     'gunicorn',
     'registration',
     'bootstrap',
+    'events',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
