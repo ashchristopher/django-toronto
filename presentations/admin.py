@@ -4,7 +4,7 @@ from .models import Presentation
 
 
 class PresentationAdmin(admin.ModelAdmin):
-    pass
+    fields = ('url', 'owner')
 
 
 admin.site.register(Presentation, PresentationAdmin)

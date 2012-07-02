@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'registration',
     'bootstrap',
     'events',
+    'presentations',
     'south',
 )
 
