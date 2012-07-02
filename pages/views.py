@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 
 from events.models import Event
+from presentations.models import Presentation
 
 
 class HomepageView(TemplateView):
@@ -10,6 +11,7 @@ class HomepageView(TemplateView):
 
         context = {
             'next_event': Event.objects.all()[0],
+            'latest_presentations': Presentation.objects.all()[0:4],
         }
 
         return self.render_to_response(context)

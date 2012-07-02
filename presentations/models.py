@@ -7,7 +7,9 @@ from django.core.exceptions import ValidationError
 
 
 class Presentation(models.Model):
+    title = models.CharField(max_length=120)
     url = models.URLField()
+    embed_code = models.TextField()
     owner = models.ForeignKey('auth.User')
     oembed = models.TextField(blank=True, null=True)
     
@@ -24,7 +26,12 @@ class Presentation(models.Model):
             self.oembed = r.content
         super(Presentation, self).save(*args, **kwargs)
 
-    def oembed_as_dict(self):
+    def get_oembed(self):
+        if not getattr(self, 'oembed_dict', None):
+            self.oembed_dict = self._oembed_as_dict()
+        return self.oembed_dict
+
+    def _oembed_as_dict(self):
         if self.oembed:
             return simplejson.loads(self.oembed)
         return {}

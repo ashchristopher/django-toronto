@@ -4,7 +4,7 @@ from .models import Presentation
 
 
 class PresentationAdmin(admin.ModelAdmin):
-    fields = ('url', 'owner')
+    exclude = ('oembed',)
 
 
 admin.site.register(Presentation, PresentationAdmin)

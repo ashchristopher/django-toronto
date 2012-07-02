@@ -36,7 +36,16 @@
                 <h2>Presentations</h2>
             </div>
             <div class="span9">
-                {% lorem 3 p %}
+                {% for presentation in latest_presentations %}
+                <div class='row presentation'>
+                    <div class='span5'>
+                        {{ presentation.embed_code|safe }}
+                    </div>
+                    <div class='span4'>
+                        User info
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
 
