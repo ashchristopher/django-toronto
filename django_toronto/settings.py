@@ -1,4 +1,4 @@
-import os.path
+import os
 import dj_database_url
 
 
@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     'bootstrap',
     'events',
     'presentations',
+    'clean',
     'south',
 )
 
@@ -156,10 +157,8 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_STORAGE_BUCKET_NAME = 'django-toronto'
-AWS_ACCESS_KEY_ID = None
-AWS_SECRET_ACCESS_KEY = None
-
-
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', None)
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', None)
 
 
 try:
