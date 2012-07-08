@@ -151,6 +151,10 @@ LOGGING = {
 # django-registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
 
+# django-storages settings
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+
 try:
     from local_settings import *
 except ImportError:
