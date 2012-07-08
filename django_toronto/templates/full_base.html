@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+    {% include '_full_page_navigation.html' %}
+{% endblock navigation %}
+
+{% block body-content %}
+    <div id='main-content' class='container'>
+        {% block container %}
+
+        {% endblock container %}
+    </div>
+{% endblock body-content %}

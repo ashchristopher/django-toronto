@@ -12,6 +12,9 @@ class Presentation(models.Model):
     embed_code = models.TextField()
     owner = models.ForeignKey('auth.User')
     oembed = models.TextField(blank=True, null=True)
+
+    date_added = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
     
     def clean(self):
         result = tldextract.extract(self.url)
