@@ -1,4 +1,4 @@
-import os.path
+import os
 import dj_database_url
 
 
@@ -74,7 +74,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '%ia^k=$d8&amp;h-7(u8g)@_!66#pczb$cs0w&amp;^r(#b9sk&amp;6$i*mdz'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     'bootstrap',
     'events',
     'presentations',
+    'clean',
     'south',
 )
 
@@ -150,6 +151,15 @@ LOGGING = {
 
 # django-registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+# django-storages settings
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+AWS_STORAGE_BUCKET_NAME = 'django-toronto'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
 
 try:
     from local_settings import *
