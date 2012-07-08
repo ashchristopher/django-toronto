@@ -8,7 +8,7 @@
         {% block css %}
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
-        <!-- <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet"> -->
+        <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" type="text/css" />
         {% endblock css %}
 
@@ -20,6 +20,15 @@
 
     <body>
     {% block body %}
+
+        {% block navigation %}
+            {% include '_homepage_navigation.html' %}
+        {% endblock navigation %}
+
+
+        {% block body-content %}{% endblock body-content %}
+
+
     {% endblock body %}
 
     {% block js_app %}
