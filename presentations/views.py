@@ -10,7 +10,7 @@ class PresentationsListView(TemplateView):
     def get(self, request):
         page = request.GET.get('page')
         all_presentations = Presentation.objects.all()
-        paginator = Paginator(all_presentations, 1)
+        paginator = Paginator(all_presentations, 4)
 
         try:
             presentations = paginator.page(page)

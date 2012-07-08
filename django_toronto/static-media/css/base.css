@@ -46,5 +46,16 @@ body {
 }
 
 .presentation {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.presentation-bucket {
+    background-color: #DEDEDE;
+    padding: 15px 0 15px 20px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.presentation-bucket .span7 {
+    margin-left: 0px;
 }

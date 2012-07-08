@@ -2,7 +2,19 @@
 
 {% block container %}
 
-
+    {% for presentation in presentations %}
+    <div class='row presentation presentation-bucket'>
+        <div class='span7'>
+            {{ presentation.embed_code|safe }}
+        </div>
+        <div class='span4'>
+            <h2>{{ presentation.get_oembed.author_name }}</h2>
+            <div>
+                <a href='{{ presentation.get_oembed.author_url }}'>More presentations by...</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 
 
 
