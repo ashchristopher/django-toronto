@@ -59,3 +59,12 @@ body {
 .presentation-bucket .span7 {
     margin-left: 0px;
 }
+
+.search {
+    height: 36px;
+    margin: 18px 0;
+}
+
+.search form {
+    float: right;
+}

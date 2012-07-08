@@ -2,8 +2,17 @@
 
 {% block container %}
 
-    {% include 'presentations/_pagination_controller.html' %}
-    
+    <div class='row'>
+        <div class='span4'>
+            {% include 'presentations/_pagination_controller.html' %}
+        </div>
+        <div class='span8 offset4 search'>
+            <form>
+                <i class="icon-search"></i> <input type='text'>
+            </form>
+        </div>
+    </div>
+
     {% for presentation in presentations %}
     <div class='row presentation presentation-bucket'>
         <div class='span7'>
