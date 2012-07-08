@@ -11,8 +11,22 @@
         </div>
         <div class='span4'>
             <h2>{{ presentation.get_oembed.author_name }}</h2>
-            <div>
-                <a href='{{ presentation.get_oembed.author_url }}'>More presentations by {{ presentation.get_oembed.author_name }}...</a>
+            <div class='row'>
+                <div class='span4'>
+                    <a href='{{ presentation.get_oembed.author_url }}'><i class="icon-globe"></i> More presentations by {{ presentation.get_oembed.author_name }}...</a>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='span4'>
+                    &nbsp;
+                </div>
+            </div>
+            
+            <div class='row'>
+                <div class='span4'>
+                    <i><i class="icon-calendar"></i> Date added: {{ presentation.date_added }}</i>
+                </div>
             </div>
         </div>
     </div>
