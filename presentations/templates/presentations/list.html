@@ -2,6 +2,8 @@
 
 {% block container %}
 
+    {% include 'presentations/_pagination_controller.html' %}
+    
     {% for presentation in presentations %}
     <div class='row presentation presentation-bucket'>
         <div class='span7'>
@@ -10,31 +12,13 @@
         <div class='span4'>
             <h2>{{ presentation.get_oembed.author_name }}</h2>
             <div>
-                <a href='{{ presentation.get_oembed.author_url }}'>More presentations by...</a>
+                <a href='{{ presentation.get_oembed.author_url }}'>More presentations by {{ presentation.get_oembed.author_name }}...</a>
             </div>
         </div>
     </div>
     {% endfor %}
 
-
-
-    <div class='row'>
-        <div class="pagination">
-            <span class="step-links">
-                {% if presentations.has_previous %}
-                    <a href="?page={{ presentations.previous_page_number }}">previous</a>
-                {% endif %}
-
-                <span class="current">
-                    Page {{ presentations.number }} of {{ presentations.paginator.num_pages }}.
-                </span>
-
-                {% if presentations.has_next %}
-                    <a href="?page={{ presentations.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
-    </div>
+    {% include 'presentations/_pagination_controller.html' %}
 </div>
 
 
