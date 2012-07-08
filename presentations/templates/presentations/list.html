@@ -14,39 +14,43 @@
     </div>
 
     {% for presentation in presentations %}
-    <div class='row presentation presentation-bucket'>
-        <div class='span7'>
-            {{ presentation.embed_code|safe }}
-        </div>
-        <div class='span4'>
-            <h2>{{ presentation.get_oembed.author_name }}</h2>
-            <div class='row'>
-                <div class='span4'>
-                    <a href='{{ presentation.get_oembed.author_url }}'><i class="icon-globe"></i> More presentations by {{ presentation.get_oembed.author_name }}...</a>
-                </div>
+        <div class='row presentation presentation-bucket'>
+            <div class='span7'>
+                {{ presentation.embed_code|safe }}
             </div>
+            <div class='span4'>
+                <h2>{{ presentation.get_oembed.author_name }}</h2>
+                <div class='row'>
+                    <div class='span4'>
+                        <a href='{{ presentation.get_oembed.author_url }}'><i class="icon-globe"></i> More presentations by {{ presentation.get_oembed.author_name }}...</a>
+                    </div>
+                </div>
 
-            <div class='row'>
-                <div class='span4'>
-                    &nbsp;
+                <div class='row'>
+                    <div class='span4'>
+                        &nbsp;
+                    </div>
                 </div>
-            </div>
-            
-            <div class='row'>
-                <div class='span4'>
-                    <span><i class="icon-calendar"></i> Presented at the following event(s):</span>
-                    <div class='row'>
-                        <div class='span4'>
-                            <ul>
-                                <li><a href='#'>Wave Accounting - August 15, 2012</a></li>
-                                <li><a href='#'>BNotions - July 11, 2012</a></li>
-                            </ul>
+                
+                <div class='row'>
+                    <div class='span4'>
+                        <span><i class="icon-calendar"></i> Presented at the following event(s):</span>
+                        <div class='row'>
+                            <div class='span4'>
+                                <ul>
+                                    <li><a href='#'>Wave Accounting - August 15, 2012</a></li>
+                                    <li><a href='#'>BNotions - July 11, 2012</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    {% empty %}
+        <div class="alert alert-info">
+            <i class='icon-info-sign '></i>   There are currently no presentations. Why don't you submit one?
+        </div>
     {% endfor %}
 
     {% include 'presentations/_pagination_controller.html' %}

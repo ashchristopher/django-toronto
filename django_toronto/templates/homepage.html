@@ -33,6 +33,10 @@
                         User info
                     </div>
                 </div>
+                {% empty %}
+                    <div class="alert alert-info">
+                        <i class='icon-info-sign '></i>   There are currently no presentations. Why don't you submit one?
+                    </div>
                 {% endfor %}
             </div>
         </div>
