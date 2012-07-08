@@ -12,16 +12,23 @@
         <div id='nav-next-meetup' class='row section'>
             <div class="span3">
                 <h2>Next Meetup</h2>
+                <a href='{% url events-list %}'>See a list of all events...</a>
             </div>
             <div class="span9">
-                {% lorem 3 p %}
+                {% if next_event %}
+
+                {% else %}
+                    <div class="alert alert-info">
+                        <i class='icon-exclamation-sign'></i> There is no future event planned. Contact us if you are interested in hosting an event.
+                    </div>
+                {% endif %}
             </div>
         </div>
 
         <div id='nav-presentations' class='row section'>
             <div class="span3">
-                <h2>Presentations</h2>
-                <a href='{% url presentations-list %}'>See more presentations...</a>
+                <h2>Latest Presentations</h2>
+                <a href='{% url presentations-list %}'>See all presentations...</a>
             </div>
             <div class="span9">
                 {% for presentation in latest_presentations %}

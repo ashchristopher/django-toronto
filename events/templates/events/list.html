@@ -1,0 +1,32 @@
+{% extends 'full_base.html' %}
+
+{% block container %}
+
+    <div class='row'>
+        <div class='span4'>
+            {% include 'events/_pagination_controller.html' %}
+        </div>
+        <div class='span8 offset4 search'>
+            <form>
+                <i class="icon-search"></i> <input type='text'>
+            </form>
+        </div>
+    </div>
+
+    {% for event in events %}
+        <div class='well'>
+            <div class='row'>
+                Event
+            </div>
+        </div>
+    {% empty %}
+        <div class="alert alert-info">
+            <i class='icon-info-sign '></i> There are currently no events. If you are interested in hosting an event, contact us!
+        </div>
+    {% endfor %}
+
+    {% include 'events/_pagination_controller.html' %}
+</div>
+
+
+{% endblock container %}

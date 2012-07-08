@@ -68,3 +68,7 @@ body {
 .search form {
     float: right;
 }
+
+.well {
+    background-color: #E9E9E9;
+}

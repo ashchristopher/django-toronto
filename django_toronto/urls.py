@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^presentations/', include('presentations.urls')),
+    url(r'^events/', include('events.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

@@ -1,0 +1,31 @@
+<div class='pagination'>
+    <ul>
+        <li {% if not events.has_previous %}class='disabled'{% endif %}>
+            {% if events.has_previous %}
+                <a href='?page={{ events.previous_page_number }}' class='previous'>
+                    <i class="icon-chevron-left"></i>
+                    Previous
+                </a>
+            {% else %}
+                <a href='#' class='previous'>
+                    <i class="icon-chevron-left"></i>
+                    Previous
+                </a>
+            {% endif %}
+            </a>
+        </li>
+        <li {% if not events.has_next %}class='disabled'{% endif %}>
+            {% if events.has_next %}
+                <a href='?page={{ events.next_page_number }}' class='next'>
+                    Next
+                    <i class="icon-chevron-right"></i>
+                </a>
+            {% else %}
+                <a href='#' class='next'>
+                    Next
+                    <i class="icon-chevron-right"></i>
+                </a>
+            {% endif %}
+        </li>
+    </ul>
+</div>
