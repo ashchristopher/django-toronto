@@ -1,39 +1,31 @@
-<!-- 
-<div class='row'>
-        <a href={% if presentations.has_previous %}"?page={{ presentations.previous_page_number }}"{% else %}"#"{% endif %} class='btn {% if presentations.has_previous %}disabled{% endif %}'>
-            <i class="icon-chevron-left"></i>
-            Previous
-        </a>
-
-        {% if presentations.has_next %}
-            <a href="?page={{ presentations.next_page_number }}" class='btn btn-primary'>
-                Next
-                <i class="icon-chevron-right"></i>
-            </a>
-            
-        {% endif %}
-
-
-    <div class='current span3 offset4'>
-        Page {{ presentations.number }} of {{ presentations.paginator.num_pages }}.
-    </div>
-</div>
- -->
-
-
 <div class='pager'>
     <ul>
         <li {% if not presentations.has_previous %}class='disabled'{% endif %}>
-            <a href='{% if presentations.has_previous %}?page={{ presentations.previous_page_number }}{% else %}#{% endif %}' class='previous'>
-                <i class="icon-chevron-left"></i>
-                Previous
+            {% if presentations.has_previous %}
+                <a href='?page={{ presentations.previous_page_number }}' class='previous'>
+                    <i class="icon-chevron-left"></i>
+                    Previous
+                </a>
+            {% else %}
+                <a href='#' class='previous'>
+                    <i class="icon-chevron-left"></i>
+                    Previous
+                </a>
+            {% endif %}
             </a>
         </li>
         <li {% if not presentations.has_next %}class='disabled'{% endif %}>
-            <a href='{% if presentations.has_next %}?page={{ presentations.next_page_number }}{% else %}#{% endif %}' class='next'>
-                Next
-                <i class="icon-chevron-right"></i>
-            </a>
+            {% if presentations.has_next %}
+                <a href='?page={{ presentations.next_page_number }}' class='next'>
+                    Next
+                    <i class="icon-chevron-right"></i>
+                </a>
+            {% else %}
+                <a href='#' class='next'>
+                    Next
+                    <i class="icon-chevron-right"></i>
+                </a>
+            {% endif %}
         </li>
     </ul>
 </div>
