@@ -5,6 +5,10 @@ body {
     background-image: url("../images/backgrounds/master-bg2.png");
 }
 
+h3.sub {
+    font-weight: 200;
+}
+
 #top-bar {
     border-bottom: 1px solid #E0E0E0;
 
@@ -46,7 +50,7 @@ body {
 }
 
 .section {
-    padding-bottom: 35px;
+    padding-bottom: 75px;
 }
 
 .presentation {

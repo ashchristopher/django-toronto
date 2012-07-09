@@ -16,13 +16,13 @@
 
         <div id='nav-next-meetup' class='row section'>
             <div class="span3">
-                <h2>Next Meetup</h2>
+                <h1>Next Meetup</h1>
                 <a href='{% url events-list %}'>See a list of all events...</a>
             </div>
             <div class="span9">
                 {% if next_event %}
-                    <h1>{{ next_event.location.name }}</h1>
-                    <h3>{{ next_event.date|date:"l F d, Y @ h:i A" }}</h3>
+                    <h2>{{ next_event.location.name }}</h2>
+                    <h3 class='sub'>{{ next_event.date|date:"l F d, Y @ h:i A" }}</h3>
                     <div class='row next-event-address-info'>
                         <div class='span6'>
                             <div class='popin'>
@@ -47,7 +47,7 @@
 
         <div id='nav-presentations' class='row section'>
             <div class="span3">
-                <h2>Latest Presentations</h2>
+                <h1>Latest Presentations</h1>
                 <a href='{% url presentations-list %}'>See all presentations...</a>
             </div>
             <div class="span9">
@@ -70,9 +70,12 @@
 
         <div id='nav-careers' class='row section'>
             <div class="span3">
-                <h2>Careers</h2>
+                <h1>Careers</h1>
             </div>
             <div class="span9">
+                <div class="alert alert-block">
+                    <i class='icon-info-sign '></i> Coming soon. Do you do Django/Python development? Do you need developers? Contact use to see how you can post your job here!
+                </div>
             </div>
         </div>
     </div>
