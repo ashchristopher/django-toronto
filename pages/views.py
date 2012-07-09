@@ -15,6 +15,9 @@ class HomepageView(TemplateView):
 
         next_event = Event.objects.filter(date__gte=now).order_by('date')[:1]
 
+        if next_event:
+            next_event = next_event[0]
+
         context = {
             'next_event': next_event,
             'latest_presentations': Presentation.objects.all().order_by('-pk')[0:4],

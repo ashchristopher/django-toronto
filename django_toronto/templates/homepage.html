@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
-{% load webdesign %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src='{{ STATIC_URL }}js/gmaps.js'></script>
+{% endblock javascript %}
 
 
 {% block body %}
@@ -16,7 +21,18 @@
             </div>
             <div class="span9">
                 {% if next_event %}
-
+                    <h1>{{ next_event.location.name }}</h1>
+                    <h3>{{ next_event.date|date:"l F d, Y @ h:i A" }}</h3>
+                    <div class='row'>
+                        <div class='span9'>
+                            Map
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='span9'>
+                            Info
+                        </div>
+                    </div>
                 {% else %}
                     <div class="alert alert-info">
                         <i class='icon-exclamation-sign'></i> There is no future event planned. Contact us if you are interested in hosting an event.
@@ -53,8 +69,12 @@
                 <h2>Careers</h2>
             </div>
             <div class="span9">
-                {% lorem 3 p %}
             </div>
         </div>
     </div>
 {% endblock body %}
+
+
+{% block js_app %}
+
+{% endblock js_app %}
