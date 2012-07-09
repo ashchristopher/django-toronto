@@ -83,8 +83,15 @@
 <script type='text/javascript'>
     var map = new GMaps({
         div: '#next-event-map',
-        lat: -12.043333,
-        lng: -77.028333
+        lat: '{{ next_event.location.latitude }}',
+        lng: '{{ next_event.location.longitude }}',
+        zoom: 17
+    });
+
+    map.addMarker({
+        lat: '{{ next_event.location.latitude }}',
+        lng: '{{ next_event.location.longitude }}',
+        title: '{{ next_event.location.name }}',
     });
 </script>
 {% endblock js_app %}
