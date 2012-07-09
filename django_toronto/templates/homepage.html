@@ -34,9 +34,6 @@
                             {{ next_event.location.address|linebreaks }}
                         </div>
                     </div>
-                    <div class='row'>
-                        
-                    </div>
                 {% else %}
                     <div class="alert alert-info">
                         <i class='icon-exclamation-sign'></i> There is no future event planned. Contact us if you are interested in hosting an event.
@@ -57,7 +54,17 @@
                         {{ presentation.embed_code|safe }}
                     </div>
                     <div class='span4'>
-                        User info
+                        <h3>{{ presentation.get_oembed.author_name }}</h3>
+                        <div class='row'>
+                            <div class='span4'>
+                                <a href='{{ presentation.url }}'><i class="icon-globe"></i> Link to this presentation</a>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='span4'>
+                                <a href='{{ presentation.get_oembed.author_url }}'><i class="icon-th-list"></i> More presentations by {{ presentation.get_oembed.author_name }}...</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% empty %}
@@ -74,7 +81,8 @@
             </div>
             <div class="span9">
                 <div class="alert alert-block">
-                    <i class='icon-info-sign '></i> Coming soon. Do you do Django/Python development? Do you need developers? Contact use to see how you can post your job here!
+                    <h3>Coming soon.</h3>
+                    Do you do Django/Python development? Do you need developers? Contact use to see how you can post your job here!
                 </div>
             </div>
         </div>
