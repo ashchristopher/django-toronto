@@ -23,15 +23,19 @@
                 {% if next_event %}
                     <h1>{{ next_event.location.name }}</h1>
                     <h3>{{ next_event.date|date:"l F d, Y @ h:i A" }}</h3>
-                    <div class='row'>
-                        <div class='span9'>
-                            Map
+                    <div class='row next-event-address-info'>
+                        <div class='span6'>
+                            <div class='popin'>
+                                <div id='next-event-map' width='300' height='200'></div>
+                            </div>
+                        </div>
+                        <div class='span3'>
+                            <h4>Address</h4>
+                            {{ next_event.location.address|linebreaks }}
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='span9'>
-                            Info
-                        </div>
+                        
                     </div>
                 {% else %}
                     <div class="alert alert-info">
@@ -58,7 +62,7 @@
                 </div>
                 {% empty %}
                     <div class="alert alert-info">
-                        <i class='icon-info-sign '></i>   There are currently no presentations. Why don't you submit one?
+                        <i class='icon-info-sign '></i> There are currently no presentations. Why don't you submit one?
                     </div>
                 {% endfor %}
             </div>
@@ -76,5 +80,11 @@
 
 
 {% block js_app %}
-
+<script type='text/javascript'>
+    var map = new GMaps({
+        div: '#next-event-map',
+        lat: -12.043333,
+        lng: -77.028333
+    });
+</script>
 {% endblock js_app %}

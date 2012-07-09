@@ -41,6 +41,10 @@ body {
     padding-top: 80px;
 }
 
+#next-event-map {
+    height: 200px;
+}
+
 .section {
     padding-bottom: 35px;
 }
@@ -71,4 +75,16 @@ body {
 
 .well {
     background-color: #E9E9E9;
+}
+
+.popin {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #999999;
+    padding: 8px;
+    margin: 10px;
+}
+
+.next-event-address-info {
+    margin-top: 20px;
 }
