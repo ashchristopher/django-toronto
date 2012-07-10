@@ -1,5 +1,13 @@
 {% extends 'full_base.html' %}
 
+
+{% block javascript %}
+    {{ block.super }}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src='{{ STATIC_URL }}js/gmaps.js'></script>
+{% endblock javascript %}
+
+
 {% block container %}
 
     <div class='row'>
@@ -14,9 +22,31 @@
     </div>
 
     {% for event in events %}
+        {% if event == next_event %}
+        <div class='well next-event'>
+        {% else %}
         <div class='well'>
+        {% endif%}
             <div class='row'>
-                Event
+                <div class='span12'>
+                    <div class='row'>
+                        <div class='span5'>
+                            <h2>{% if event == next_event %}<i class='icon-star'></i>{% endif%}{{ event.location.name }}</h2>
+                            <h4>{{ event.date|date:"l F d, Y @ h:i A" }}</h4>
+                            <div class='popin'>
+                                <div id='event-map-{{ event.pk }}' class='event-list-map'></div>
+                            </div>
+                        </div>
+                        <div class='span6'>
+                            <h2 class='sub'>Presentations</h2>
+                            <ul class='event-presentation-list'>
+                                <li>
+                                    <i class="icon-globe"></i> foo
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     {% empty %}
@@ -27,6 +57,22 @@
 
     {% include 'events/_pagination_controller.html' %}
 </div>
-
-
 {% endblock container %}
+
+{% block js_app %}
+<script type='text/javascript'>
+    {% for event in events %}
+        var map_{{ event.pk }} = new GMaps({
+            div: 'event-map-{{ event.pk }}',
+            lat: '{{ event.location.latitude }}',
+            lng: '{{ event.location.longitude }}',
+            zoom: 17
+        });
+        map_{{ event.pk }}.addMarker({
+            lat: '{{ event.location.latitude }}',
+            lng: '{{ event.location.longitude }}',
+            title: '{{ event.location.name }}',
+        });
+    {% endfor %}
+</script>
+{% endblock js_app %}

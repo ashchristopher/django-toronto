@@ -1,22 +1,14 @@
-from datetime import datetime
-
 from django.views.generic import TemplateView
-from django.utils.timezone import utc
 
-from events.models import Event
+from events.mixins import NextEventMixin
 from presentations.models import Presentation
 
 
-class HomepageView(TemplateView):
+class HomepageView(NextEventMixin, TemplateView):
     template_name = 'homepage.html'
 
     def get(self, request):
-        now = datetime.now().replace(tzinfo=utc)
-
-        next_event = Event.objects.filter(date__gte=now).order_by('date')[:1]
-
-        if next_event:
-            next_event = next_event[0]
+        next_event = self._get_next_event()
 
         context = {
             'next_event': next_event,

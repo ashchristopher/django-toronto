@@ -2,15 +2,18 @@ from django.views.generic import TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from events.models import Event
+from events.mixins import NextEventMixin
 
 
-class EventsListView(TemplateView):
+class EventsListView(NextEventMixin, TemplateView):
     template_name = 'events/list.html'
 
     def get(self, request):
         page = request.GET.get('page')
-        
-        all_events = Event.objects.all()
+
+        all_events = Event.objects.all().order_by('-date')
+        next_event = self._get_next_event()
+
         paginator = Paginator(all_events, 4)
 
         try:
@@ -24,6 +27,7 @@ class EventsListView(TemplateView):
 
         context = {
             'events': events,
+            'next_event': next_event,
         }
 
         return self.render_to_response(context)

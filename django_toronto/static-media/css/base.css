@@ -5,9 +5,15 @@ body {
     background-image: url("../images/backgrounds/master-bg2.png");
 }
 
-h3.sub {
+.sub {
     font-weight: 200;
 }
+
+// todo: figure out how to do this
+/*h2 i [class^="icon-"], [class*=" icon-"] {
+    vertical-align: 25%;  
+}
+*/
 
 #top-bar {
     border-bottom: 1px solid #E0E0E0;
@@ -26,7 +32,6 @@ h3.sub {
     padding: 5px 14px 6px;
 }
 
-
 #top-bar ul.nav {
     float:right;
 }
@@ -40,12 +45,15 @@ h3.sub {
     width: 100%;
 }
 
-
 #main-content {
 }
 
 #next-event-map {
     height: 200px;
+}
+
+.event-list-map {
+    height: 150px;
 }
 
 .section {
@@ -97,4 +105,17 @@ h3.sub {
 
 .top-pagination {
     padding-top: 60px;
+}
+
+.event-presentation-list {
+    background-color: #DEDEDE;
+    padding: 15px 20px;
+    /*box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.8);*/
+    border-radius: 5px 5px 5px 5px; 
+    margin: 27px 0 0 0;
+    box-shadow: 0 0 20px #999;
+}
+
+ul.event-presentation-list {
+    list-style: none;
 }
