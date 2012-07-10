@@ -22,16 +22,12 @@
     </div>
 
     {% for event in events %}
-        {% if event == next_event %}
-        <div class='well next-event'>
-        {% else %}
         <div class='well'>
-        {% endif%}
             <div class='row'>
                 <div class='span12'>
                     <div class='row'>
                         <div class='span5'>
-                            <h2>{% if event == next_event %}<i class='icon-star'></i>{% endif%}{{ event.location.name }}</h2>
+                            <h2><a href='#'>{{ event.location.name }}</a></h2>
                             <h4>{{ event.date|date:"l F d, Y @ h:i A" }}</h4>
                             <div class='popin'>
                                 <div id='event-map-{{ event.pk }}' class='event-list-map'></div>
