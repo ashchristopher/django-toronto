@@ -20,6 +20,15 @@ h3.sub {
     height: 50px;
 }
 
+#top-bar .nav > li > a {
+    color: #0088CC;
+    text-shadow: none;
+}
+
+#top-bar .nav > li > a:hover {
+    color: #005580;
+}
+
 #topbar a.btn {
     color: #FFFFFF;
     margin-top: 4px;
