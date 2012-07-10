@@ -11,7 +11,7 @@ class EventsListView(NextEventMixin, TemplateView):
     def get(self, request):
         page = request.GET.get('page')
 
-        all_events = Event.objects.all().select_related('location').order_by('-date')
+        all_events = Event.objects.all().select_related('location').prefetch_related('presentations').order_by('-date')
         next_event = self._get_next_event()
 
         paginator = Paginator(all_events, 4)

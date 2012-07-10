@@ -35,11 +35,20 @@
                         </div>
                         <div class='span6'>
                             <h2 class='sub'>Presentations</h2>
-                            <ul class='event-presentation-list'>
-                                <li>
-                                    <i class="icon-globe"></i> foo
-                                </li>
-                            </ul>
+
+                            {% if event.presentations.exists %}
+                                <ul class='event-presentation-list'>
+                                    {% for presentation in event.presentations.all %}
+                                    <li>
+                                        <i class="icon-globe"></i> <a href='{{ presentation.url }}'>{{ presentation.get_oembed.title }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>                            
+                            {% else %}
+                                <div class="alert alert-info event-presentation-list">
+                                    <i class='icon-info-sign '></i> Contact us to have your event added to the list.
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -108,14 +108,13 @@ body {
 }
 
 .event-presentation-list {
-    background-color: #DEDEDE;
-    padding: 15px 20px;
-    /*box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.8);*/
-    border-radius: 5px 5px 5px 5px; 
     margin: 27px 0 0 0;
-    box-shadow: 0 0 20px #999;
 }
 
 ul.event-presentation-list {
+    background-color: #DEDEDE;
+    padding: 15px 20px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 5px 5px 5px 5px; 
     list-style: none;
 }
