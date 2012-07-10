@@ -8,7 +8,7 @@ class EventManager(models.Manager):
 
     def next_event(self):
         now = datetime.now().replace(tzinfo=utc)
-        next_events_qs = self.filter(date__gte=now).order_by('date')[:1]
+        next_events_qs = self.filter(date__gte=now).select_related('location').order_by('date')[:1]
 
         if next_events_qs:
             next_event = next_events_qs[0]
