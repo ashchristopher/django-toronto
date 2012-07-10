@@ -11,10 +11,6 @@
         <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" type="text/css" />
         {% endblock css %}
-
-        {% block javascript %}
-        <script src='{{ STATIC_URL }}js/jquery.min.js'></script>
-        {% endblock javascript %}
     {% endblock head%}
     </head>
 
@@ -25,11 +21,14 @@
             {% include '_homepage_navigation.html' %}
         {% endblock navigation %}
 
-
         {% block body-content %}{% endblock body-content %}
 
-
     {% endblock body %}
+
+    {% block javascript %}
+        <script src='{{ STATIC_URL }}js/jquery.min.js'></script>
+        <script src='{{ STATIC_URL }}js/script.js'></script>
+    {% endblock javascript %}
 
     {% block js_app %}
     {% endblock js_app %}
