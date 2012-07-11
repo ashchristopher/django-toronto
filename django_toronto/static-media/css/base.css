@@ -50,7 +50,7 @@ body {
     padding: 50px 0;
     background: url("../images/backgrounds/bg_pixels.png");
     /*background-size: cover;*/
-    /*height: 400px;*/
+    height: 400px;
     /*background-position: 50% 50%;*/
     /*width: 100%;*/
 }
