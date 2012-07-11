@@ -3,12 +3,25 @@
   var App = {
     // Initializes the whole page
     init: function () {
-      this.initScrolling();
+      this.ensureElements();
+      this.attachEvents();
     },
 
-    // Adds scrolling functionality to page anchor links
-    initScrolling: function () {
+    ensureElements: function () {
+      this.$homeLogo = $('#home-logo');
+      this.$mainLogo = $('#main-logo');
+    },
+
+    // Event binding and delegation for all pages
+    attachEvents: function () {
+      // Adds scrolling animation for internal links
       $('a[href^=#]').on('click', this._scrollToElement);
+
+      // Event for displaying small logo in top bar when main logo is out of viewport
+      // Only do this if the main logo is on the page
+      if (this.$mainLogo.length) {
+        $(window).on('scroll', $.proxy(this._viewportScrollHandler, this));
+      }
     },
 
     _scrollToElement: function (e) {
@@ -22,6 +35,11 @@
       $('html,body').animate({
         scrollTop: $div.offset().top
       }, 'slow');
+    },
+
+    _viewportScrollHandler: function (e) {
+      $('#home-logo').toggleClass('invisible', $('#main-logo').is(':in-viewport'))
+      this.$homeLogo.toggleClass('invisible', this.$mainLogo.is(':in-viewport'), 'slow');
     }
   };
 
