@@ -10,7 +10,9 @@
 
 {% block body %}
     {{ block.super }}
-    <div class='hero'></div>
+    <div class='hero'>
+        <img id='main-logo' src='{{ STATIC_URL }}images/logos/logo.png'>
+    </div>
 
     <div id='main-content' class='container'>
 

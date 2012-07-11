@@ -15,6 +15,7 @@ body {
 }
 */
 
+
 #top-bar {
     border-bottom: 1px solid #E0E0E0;
 
@@ -52,6 +53,11 @@ body {
     height: 400px;
     background-position: 50% 50%;
     width: 100%;
+}
+
+#main-logo {
+    display: inline;
+    margin: auto;
 }
 
 #main-content {
