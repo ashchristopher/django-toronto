@@ -15,7 +15,7 @@ class Location(models.Model):
 
 class Event(models.Model):
     location = models.ForeignKey('Location')
-    presentations = models.ManyToManyField('presentations.Presentation')
+    presentations = models.ManyToManyField('presentations.Presentation', blank=True, null=True)
     date = models.DateTimeField(db_index=True)
 
     objects = EventManager()
