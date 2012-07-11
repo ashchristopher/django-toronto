@@ -9,6 +9,10 @@ body {
     font-weight: 300;
 }
 
+.invisible {
+    opacity: 0;
+}
+
 // todo: figure out how to do this
 /*h2 i [class^="icon-"], [class*=" icon-"] {
     vertical-align: 25%;  
@@ -21,6 +25,11 @@ body {
 
 }
 
+#home-logo {
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+}
+
 #top-bar .navbar-inner {
     background-color: #FEFEFE;
     background-image: none;
@@ -30,6 +39,7 @@ body {
 #top-bar .nav > li > a {
     color: #0088CC;
     text-shadow: none;
+    padding-top: 18px;
 }
 
 #top-bar .nav > li > a:hover {
