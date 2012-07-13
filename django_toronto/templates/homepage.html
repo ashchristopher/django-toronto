@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load google_calendar %}
 
 {% block javascript %}
     {{ block.super }}
@@ -34,6 +34,13 @@
                         <div class='span3'>
                             <h4>Address</h4>
                             {{ next_event.location.address|linebreaks }}
+
+                            <h4>Add to calendar</h4>
+                            <ul class='add-to-calendar-list'>
+                                <li class='google-calendar'>
+                                <a href="{% create_google_calendar_url next_event %}" title="Add to Google Calendar">Google</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 {% else %}

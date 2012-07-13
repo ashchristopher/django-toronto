@@ -1,4 +1,5 @@
 {% extends 'full_base.html' %}
+{% load google_calendar %}
 
 
 {% block javascript %}
@@ -49,6 +50,12 @@
                                     <i class='icon-info-sign '></i> Contact us to have your event added to the list.
                                 </div>
                             {% endif %}
+                            <h2 class='sub'>Add to calendar</h2>
+                            <ul class='add-to-calendar-list'>
+                                <li class='google-calendar'>
+                                <a href="{% create_google_calendar_url next_event %}" title="Add to Google Calendar">Google</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
