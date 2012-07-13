@@ -130,7 +130,7 @@ body {
 }
 
 .event-presentation-list {
-    margin: 27px 0 0 0;
+    margin: 27px 0;
 }
 
 ul.event-presentation-list {
@@ -139,4 +139,17 @@ ul.event-presentation-list {
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.8);
     border-radius: 5px 5px 5px 5px; 
     list-style: none;
+}
+
+ul.add-to-calendar-list {
+    margin: 0;
+    list-style: none;
+}
+
+ul.add-to-calendar-list li {
+    padding: 0 0 0 27px;
+}
+
+.google-calendar {
+    background: url("../images/icons/google_calendar.png") no-repeat 0% 50%;
 }
