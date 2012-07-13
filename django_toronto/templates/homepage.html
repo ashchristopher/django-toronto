@@ -98,7 +98,11 @@
         div: '#next-event-map',
         lat: '{{ next_event.location.latitude }}',
         lng: '{{ next_event.location.longitude }}',
-        zoom: 17
+        zoom: 17,
+        zoomControlOpt: {
+            style: 'DEFAULT',
+            position: 'TOP_RIGHT'
+        }
     });
 
     map.addMarker({

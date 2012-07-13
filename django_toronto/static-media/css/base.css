@@ -140,3 +140,9 @@ ul.event-presentation-list {
     border-radius: 5px 5px 5px 5px; 
     list-style: none;
 }
+
+/* Fix for Twitter Bootstrap */
+.event-list-map img, #next-event-map img {
+    max-width: none;
+    vertical-align: baseline;
+}
