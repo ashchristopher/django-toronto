@@ -19,15 +19,14 @@ body {
 }
 */
 
-
 #top-bar {
     border-bottom: 1px solid #E0E0E0;
-
 }
 
 #home-logo {
     transition: opacity 0.5s linear;
     -webkit-transition: opacity 0.5s linear;
+    visibility: visible;
 }
 
 #top-bar .navbar-inner {
