@@ -154,6 +154,10 @@ ul.add-to-calendar-list li {
     background: url("../images/icons/google_calendar.png") no-repeat 0% 50%;
 }
 
+.plancast {
+    background: url("../images/icons/plancast.png") no-repeat 0% 50%;
+}
+
 @media (max-width: 480px) {
     #home-logo {
         display: none;
