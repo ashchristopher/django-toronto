@@ -17,6 +17,7 @@ class Event(models.Model):
     location = models.ForeignKey('Location')
     presentations = models.ManyToManyField('presentations.Presentation', blank=True, null=True)
     date = models.DateTimeField(db_index=True)
+    plancast_id = models.CharField(help_text='Base 36 code which can be found in the plancast url: http://plancast.com/p/:plancast_id/django-toronto-meetup', max_length=8, blank=True, null=True)
 
     objects = EventManager()
 
