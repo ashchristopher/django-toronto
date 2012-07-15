@@ -63,7 +63,8 @@
                         {{ presentation.embed_code|safe }}
                     </div>
                     <div class='span4'>
-                        <h3>{{ presentation.get_oembed.author_name }}</h3>
+                        <h3>{{ presentation.get_oembed.title }}</h3>
+                        <p>by {{ presentation.get_oembed.author_name }}</p>
                         <div class='row'>
                             <div class='span4'>
                                 <a href='{{ presentation.url }}'><i class="icon-globe"></i> Link to this presentation</a>
