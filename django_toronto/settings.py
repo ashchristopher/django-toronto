@@ -6,7 +6,7 @@ PROJECT_PATH = os.path.join(os.path.dirname(__file__), '../')
 
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
