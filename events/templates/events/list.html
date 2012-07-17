@@ -47,7 +47,7 @@
                                 </ul>
                             {% else %}
                                 <div class="alert alert-info event-presentation-list">
-                                    <i class='icon-info-sign '></i> Contact us to have your event added to the list.
+                                    <i class='icon-info-sign '></i> <a href='{% url contact_us %}'>Contact us</a> to have your presentation added to the list.
                                 </div>
                             {% endif %}
                             <h2 class='sub'>Add to calendar</h2>
@@ -68,7 +68,7 @@
         </div>
     {% empty %}
         <div class="alert alert-info">
-            <i class='icon-info-sign '></i> There are currently no events. If you are interested in hosting an event, contact us!
+            <i class='icon-info-sign '></i> There are currently no events. If you are interested in hosting an event, <a href='{% url contact_us %}'>contact us</a>!
         </div>
     {% endfor %}
 
