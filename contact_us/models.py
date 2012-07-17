@@ -10,7 +10,7 @@ class ContactUsMessage(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return "Message from {email}".format(ip=self.email_address)
+        return "Message from {email}".format(email=self.email_address)
 
 
 class BannedIp(models.Model):

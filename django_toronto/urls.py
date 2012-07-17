@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^presentations/', include('presentations.urls')),
     url(r'^events/', include('events.urls')),
+    url(r'^contact-us/', include('contact_us.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

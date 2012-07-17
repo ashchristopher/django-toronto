@@ -4,7 +4,7 @@ from contact_us.models import ContactUsMessage, BannedIp
 
 
 class ContactUsMessageAdmin(admin.ModelAdmin):
-    list_display = ('submitter_ip', 'date_added', )
+    list_display = ('email_address', 'submitter_ip', 'date_added', )
 
 
 class BannedIpAdmin(admin.ModelAdmin):
