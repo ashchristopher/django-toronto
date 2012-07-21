@@ -1,10 +1,41 @@
 {% extends 'full_base.html' %}
 
 
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/contact-us.css" type="text/css" />
+{% endblock css %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    <script src='{{ STATIC_URL }}js/jquery.autogrow-textarea.js'></script>
+{% endblock javascript %}
+
+
 {% block container %}
-    <form action='' method='POST'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type='submit' class='btn btn-primary' value='Submit Message'>
-    </form>
+    <div class='row'>
+        <div class='offset1 span10'>
+            <h1>Contact Us</h1>
+            <form action='' method='POST' class='well form-horizontal'>
+                {% csrf_token %}
+                <div class='form-fields-section'>
+                    {{ form.as_p }}
+                </div>
+                <div class='submit-section'>
+                    <input type='submit' class='btn btn-large btn-primary' value='Submit Message'>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock container %}
+
+
+{% block js_app %}
+<script>
+    $(document).ready(function(){
+        console.log('loading...');
+        $('#id_message').autogrow();
+    });        
+</script>
+{% endblock js_app %}
