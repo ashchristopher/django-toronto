@@ -50,7 +50,7 @@
                     </div>
                 {% else %}
                     <div class="alert alert-info">
-                        <i class='icon-exclamation-sign'></i> There is no future event planned. Contact us if you are interested in hosting an event.
+                        <i class='icon-exclamation-sign'></i> There is no future event planned. <a href='{% url contact_us %}'>Contact us</a> if you are interested in hosting an event.
                     </div>
                 {% endif %}
             </div>
@@ -97,7 +97,7 @@
             <div class="span9">
                 <div class="alert alert-block">
                     <h3>Coming soon.</h3>
-                    Do you do Django/Python development? Do you need developers? Contact us to see how you can post your job here!
+                    Do you do Django/Python development? Do you need developers? <a href='{% url contact_us %}'>Contact us</a> to see how you can post your job here!
                 </div>
             </div>
         </div>

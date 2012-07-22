@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'clean',
     'south',
     'debug_toolbar',
+    'contact_us',
 )
 
 # A sample logging configuration. The only tangible logging
