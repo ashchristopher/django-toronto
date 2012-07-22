@@ -6,7 +6,7 @@ PROJECT_PATH = os.path.join(os.path.dirname(__file__), '../')
 
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -58,7 +58,7 @@ STATIC_ROOT = os.path.join(PROJECT_PATH, 'django_toronto', 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = os.environ.get('S3_STATIC_URL') or '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
