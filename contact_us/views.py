@@ -26,10 +26,14 @@ class ContactUsView(TemplateView):
 
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(reverse('contact_us_complete'))
 
         context = {
             'form': form,
         }
 
         return self.render_to_response(context)
+
+
+class ContactUsViewComplete(TemplateView):
+    template_name = 'contact_us/complete.html'
