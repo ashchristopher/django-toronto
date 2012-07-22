@@ -179,3 +179,9 @@ ul.errorlist {
         display: none;
     }
 }
+
+/* Fix for Twitter Bootstrap */
+.event-list-map img, #next-event-map img {
+    max-width: none;
+    vertical-align: baseline;
+}

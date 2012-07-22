@@ -83,7 +83,11 @@
             div: 'event-map-{{ event.pk }}',
             lat: '{{ event.location.latitude }}',
             lng: '{{ event.location.longitude }}',
-            zoom: 17
+            zoom: 17,
+            zoomControlOpt: {
+                style: 'DEFAULT',
+                position: 'TOP_RIGHT'
+            }
         });
         map_{{ event.pk }}.addMarker({
             lat: '{{ event.location.latitude }}',
