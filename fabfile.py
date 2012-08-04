@@ -56,6 +56,7 @@ def deploy(tag):
         with cd('django-toronto'):
             run('git fetch')
             run('git checkout {0}'.format(tag))
+            run('git pull --rebase origin {0}'.format(tag))
 
     install_requirements()
 
