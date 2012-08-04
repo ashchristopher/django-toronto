@@ -4,7 +4,9 @@ import dj_database_url
 
 PROJECT_PATH = os.path.join(os.path.dirname(__file__), '../')
 
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {
+    'default': os.environ.get('DEFAULT_DB_URL') or dj_database_url.config(default='mysql://root@localhost/django_toronto')
+}
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -22,7 +24,7 @@ MANAGERS = ADMINS
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Toronto'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
