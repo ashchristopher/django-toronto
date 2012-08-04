@@ -1,5 +1,6 @@
 Django==1.4
 Fabric==1.4.3
+MySQL-python==1.2.3
 South==0.7.5
 boto==2.5.2
 dj-database-url==0.2.1
@@ -11,7 +12,6 @@ django-storages==1.1.4
 gunicorn==0.14.5
 ipdb==0.6.1
 ipython==0.13
-psycopg2==2.4.5
 pycrypto==2.6
 pytz==2012c
 requests==0.13.2
