@@ -57,7 +57,7 @@ def update_code_from_github(tag):
 def update_database():
     with cd(env.code_dir):
         with cd('django-toronto'):
-            run('python ./manage.py syncdb')
+            run('python ./manage.py syncdb --noinput')
             run('python ./manage.py migrate')
 
 
