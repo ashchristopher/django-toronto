@@ -1,21 +1,17 @@
 from datetime import datetime
-from fabric.api import env, cd, run, task, prefix
+from fabric.api import env, cd, run, task, prefix, sudo
 from fabric.contrib.files import exists
 
 import local_fab_settings
 
-env.environment_set = False
-
-
-def setup_env():
-    env.user = local_fab_settings.USER
-    env.key_filename = local_fab_settings.KEY_FILENAME
-    env.hosts = local_fab_settings.HOSTS
-    env.code_dir = local_fab_settings.VMFARMS_CODE_DIR
-    env.forward_agent = True
-    env.virtualenv = local_fab_settings.VMFARMS_VIRTUAL_ENV_DIR
-
-    env.environment_set = True
+env.use_shell = False
+env.user = local_fab_settings.USER
+env.key_filename = local_fab_settings.KEY_FILENAME
+env.hosts = local_fab_settings.HOSTS
+env.code_dir = local_fab_settings.VMFARMS_CODE_DIR
+env.forward_agent = True
+env.virtualenv = local_fab_settings.VMFARMS_VIRTUAL_ENV_DIR
+env.webserver_supervisor_label = 'gunicorn-djangotoronto.com'
 
 
 def archive_installation_if_exists():
@@ -57,6 +53,11 @@ def update_code_from_github(tag):
 
 
 @task
+def restart_webserver():
+    sudo('/usr/bin/supervisorctl restart {0}'.format(env.webserver_supervisor_label))
+
+
+@task
 def update_database():
     """ Update and migrate database schema. """
     with prefix('source {0}bin/activate'.format(env.virtualenv)):
@@ -84,19 +85,16 @@ def provision():
 @task
 def deploy(tag):
     """ Deploys a specified `tag`. """
-    print "Deploying {0}".format(tag)
+    print "Deploying tag: {0}".format(tag)
 
     update_code_from_github(tag)
     install_requirements()
     update_database()
     collectstatic()
-
-    # restart app servers
+    restart_webserver()
 
 
 @task
 def archive():
     """ Archives the current installation to a timestamped folder. """
     archive_installation_if_exists()
-
-setup_env()
