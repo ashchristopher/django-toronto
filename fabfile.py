@@ -18,13 +18,19 @@ def setup_env():
     env.environment_set = True
 
 
-def move_previous_installation_if_exists():
+def archive_installation_if_exists():
     with cd(env.code_dir):
         if exists('django-toronto'):
             dir_postfix = datetime.now().isoformat()
             new_dir_name = 'django-toronto-{0}'.format(dir_postfix)
             print "Moving old install to {0}".format(new_dir_name)
             run("mv -f django-toronto {0}".format(new_dir_name))
+
+
+def check_if_installation_exists():
+    with cd(env.code_dir):
+        if exists('django-toronto'):
+            raise Exception("Application is already installed.")
 
 
 def setup_installation():
@@ -40,10 +46,25 @@ def install_requirements():
             run('pip install -r django-toronto/requirements.txt')
 
 
+def update_code_from_github(tag):
+    with cd(env.code_dir):
+        with cd('django-toronto'):
+            run('git fetch')
+            run('git checkout {0}'.format(tag))
+            run('git pull --rebase origin {0}'.format(tag))
+
+
+def update_database():
+    with cd(env.code_dir):
+        with cd('django-toronto'):
+            run('python ./manage.py syncdb')
+            run('python ./manage.py migrate')
+
+
 @task
 def provision():
     """ Installs the django-toronto app. """
-    move_previous_installation_if_exists()
+    check_if_installation_exists()
     setup_installation()
 
 
@@ -52,12 +73,19 @@ def deploy(tag):
     """ Deploys a specified `tag`. """
     print "Deploying {0}".format(tag)
 
-    with cd(env.code_dir):
-        with cd('django-toronto'):
-            run('git fetch')
-            run('git checkout {0}'.format(tag))
-            run('git pull --rebase origin {0}'.format(tag))
+    with prefix('source {0}bin/activate'.format(env.virtualenv)):
+        update_code_from_github(tag)
+        install_requirements()
+        update_database()
 
-    install_requirements()
+        # collect static
+
+        # restart app servers
+
+
+@task
+def archive():
+    """ Archives the current installation to a timestamped folder. """
+    archive_installation_if_exists()
 
 setup_env()

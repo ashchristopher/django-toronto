@@ -5,7 +5,7 @@ import dj_database_url
 PROJECT_PATH = os.path.join(os.path.dirname(__file__), '../')
 
 DATABASES = {
-    'default': os.environ.get('DEFAULT_DB_URL') or dj_database_url.config(default='mysql://root@localhost/django_toronto')
+    'default':  dj_database_url.config(default=os.environ.get('DEFAULT_DB_URL') or 'mysql://root@localhost/django_toronto')
 }
 
 DEBUG = False
