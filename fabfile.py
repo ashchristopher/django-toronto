@@ -40,25 +40,38 @@ def setup_installation():
 
 
 def install_requirements():
-    with cd(env.code_dir):
-        # install the requirements in the virtualenv
-        with prefix('source {0}bin/activate'.format(env.virtualenv)):
-            run('pip install -r django-toronto/requirements.txt')
+    with prefix('source {0}bin/activate'.format(env.virtualenv)):
+        with cd(env.code_dir):
+            # install the requirements in the virtualenv
+            with prefix('source {0}bin/activate'.format(env.virtualenv)):
+                run('pip install -r django-toronto/requirements.txt')
 
 
 def update_code_from_github(tag):
-    with cd(env.code_dir):
-        with cd('django-toronto'):
-            run('git fetch')
-            run('git checkout {0}'.format(tag))
-            run('git pull --rebase origin {0}'.format(tag))
+    with prefix('source {0}bin/activate'.format(env.virtualenv)):
+        with cd(env.code_dir):
+            with cd('django-toronto'):
+                run('git fetch')
+                run('git checkout {0}'.format(tag))
+                run('git pull --rebase origin {0}'.format(tag))
 
 
+@task
 def update_database():
-    with cd(env.code_dir):
-        with cd('django-toronto'):
-            run('python ./manage.py syncdb --noinput')
-            run('python ./manage.py migrate')
+    """ Update and migrate database schema. """
+    with prefix('source {0}bin/activate'.format(env.virtualenv)):
+        with cd(env.code_dir):
+            with cd('django-toronto'):
+                run('python ./manage.py syncdb --noinput --migrate')
+
+
+@task
+def collectstatic():
+    """ Collect static files. """
+    with prefix('source {0}bin/activate'.format(env.virtualenv)):
+        with cd(env.code_dir):
+            with cd('django-toronto'):
+                run('python ./manage.py collectstatic --noinput')
 
 
 @task
@@ -73,14 +86,12 @@ def deploy(tag):
     """ Deploys a specified `tag`. """
     print "Deploying {0}".format(tag)
 
-    with prefix('source {0}bin/activate'.format(env.virtualenv)):
-        update_code_from_github(tag)
-        install_requirements()
-        update_database()
+    update_code_from_github(tag)
+    install_requirements()
+    update_database()
+    collectstatic()
 
-        # collect static
-
-        # restart app servers
+    # restart app servers
 
 
 @task
