@@ -1,4 +1,5 @@
 local_settings.py
+local_fab_settings.py
 *.py[co]
 
 # Packages
