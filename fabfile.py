@@ -4,7 +4,6 @@ from fabric.contrib.files import exists
 
 import local_fab_settings
 
-env.use_shell = False
 env.user = local_fab_settings.USER
 env.key_filename = local_fab_settings.KEY_FILENAME
 env.hosts = local_fab_settings.HOSTS
@@ -54,7 +53,7 @@ def update_code_from_github(tag):
 
 @task
 def restart_webserver():
-    sudo('/usr/bin/supervisorctl restart {0}'.format(env.webserver_supervisor_label))
+    sudo('/usr/bin/supervisorctl restart {0}'.format(env.webserver_supervisor_label), shell=False)
 
 
 @task
@@ -86,6 +85,7 @@ def provision():
 def deploy(tag):
     """ Deploys a specified `tag`. """
     print "Deploying tag: {0}".format(tag)
+    print "Running as user: {0}".format(env.user)
 
     update_code_from_github(tag)
     install_requirements()
