@@ -44,8 +44,9 @@
                         <div class='row'>
                             <div class='span4'>
                                 <ul>
-                                    <li><a href='#'>Wave Accounting - August 15, 2012</a></li>
-                                    <li><a href='#'>BNotions - July 11, 2012</a></li>
+                                    {% for event in presentation.get_events %}
+                                    <li>{{ event.location.name }} - {{ event.date|date:"F j, Y" }}</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
