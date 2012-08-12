@@ -41,7 +41,7 @@
                                 <ul class='event-presentation-list'>
                                     {% for presentation in event.presentations.all %}
                                     <li>
-                                        <i class="icon-globe"></i> <a href='{{ presentation.url }}'>{{ presentation.get_oembed.title }}</a>
+                                        <i class="icon-globe"></i> <a href='{{ presentation.url }}'>{{ presentation.get_oembed.title }}</a> - {{ presentation.get_oembed.author_name }}
                                     </li>
                                     {% endfor %}
                                 </ul>

@@ -11,12 +11,12 @@
 {% block body %}
     {{ block.super }}
     <div class='hero'>
-        <img id='main-logo' src='{{ STATIC_URL }}images/logos/logo-inverted.png' height='200'>
+        <img id='main-logo' src='{{ STATIC_URL }}images/logos/logo.png' height='260'>
         <div id='powered-by'>
             <div>
                 <span>Hosting provided by:</span>
                 <a href='http://www.vmfarms.com/'>
-                    <img class='sponsor-logo' src='{{ STATIC_URL }}images/logos/vmfarms/logo-white-large-trans.png' height='55'>
+                    <img class='sponsor-logo' src='{{ STATIC_URL }}images/logos/vmfarms/logo-black-large-trans.png' height='65'>
                 </a>
             </div>
         </div>
@@ -105,7 +105,7 @@
             <div class="span9">
                 <div class="alert alert-block">
                     <h3>Coming soon.</h3>
-                    Do you do Django/Python development? Do you need developers? <a href='{% url contact_us %}'>Contact us</a> to see how you can post your job here!
+                    Do you have positions available for Django developers? <a href='{% url contact_us %}'>Contact us</a> to see how you can post your job here!
                 </div>
             </div>
         </div>

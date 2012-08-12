@@ -2,7 +2,7 @@ body {
     color: #4A4A4A;
     font-size: 13px;
     font-family: 'Lato', sans-serif;
-    background-image: url("../images/backgrounds/master-bg2.png");
+    background-image: url("../images/backgrounds/light-linen.png");
 }
 
 .sub {
@@ -56,33 +56,32 @@ body {
 }
 
 .hero {
-    background: url("../images/backgrounds/bg_pixels.png");
     margin: 55px 0 0;
     padding: 20px 0;
 }
 
 #powered-by {
-    max-width: 600px;
+    max-width: 750px;
     margin: auto;
     text-align: right;
 }
 
 #powered-by div {
     display: inline-block;
+    padding: 5px;
     text-align: center;
 }
 
 #powered-by div span {
     font-size: 0.8em;
-    color: #CCC;
     display: block;
     padding-bottom: 10px;
 }
 
 #main-logo {
-    margin: 30px auto;
+    margin: 30px auto 0;
     display: block;
-    height: 200px;
+    height: 260px;
 }
 
 #main-content {
@@ -94,6 +93,11 @@ body {
 
 .event-list-map {
     height: 150px;
+}
+
+.section:first {
+    border-top: none;
+
 }
 
 .section {
