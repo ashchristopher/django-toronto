@@ -58,12 +58,13 @@ body {
 .hero {
     padding: 50px 0;
     background: url("../images/backgrounds/bg_pixels.png");
-    height: 400px;
+    height: 200px;
 }
 
 #main-logo {
     margin: 30px auto;
     display: block;
+    height: 200px;
 }
 
 #main-content {
