@@ -56,9 +56,26 @@ body {
 }
 
 .hero {
-    padding: 50px 0;
     background: url("../images/backgrounds/bg_pixels.png");
-    height: 200px;
+    padding: 50px 0;
+}
+
+#powered-by {
+    max-width: 600px;
+    margin: auto;
+    text-align: right;
+}
+
+#powered-by div {
+    display: inline-block;
+    text-align: center;
+}
+
+#powered-by div span {
+    font-size: 0.8em;
+    color: #CCC;
+    display: block;
+    padding-bottom: 10px;
 }
 
 #main-logo {

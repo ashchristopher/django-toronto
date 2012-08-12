@@ -12,6 +12,14 @@
     {{ block.super }}
     <div class='hero'>
         <img id='main-logo' src='{{ STATIC_URL }}images/logos/logo-inverted.png' height='200'>
+        <div id='powered-by'>
+            <div>
+                <span>Hosting provided by:</span>
+                <a href='http://www.vmfarms.com/'>
+                    <img class='sponsor-logo' src='{{ STATIC_URL }}images/logos/vmfarms/logo-white-large-trans.png' height='55'>
+                </a>
+            </div>
+        </div>
     </div>
 
     <div id='main-content' class='container'>
@@ -111,7 +119,7 @@
         div: '#next-event-map',
         lat: '{{ next_event.location.latitude }}',
         lng: '{{ next_event.location.longitude }}',
-        zoom: 17,
+        zoom: 15,
         zoomControlOpt: {
             style: 'DEFAULT',
             position: 'TOP_RIGHT'
