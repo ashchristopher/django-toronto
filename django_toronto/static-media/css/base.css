@@ -57,7 +57,8 @@ body {
 
 .hero {
     background: url("../images/backgrounds/bg_pixels.png");
-    padding: 50px 0;
+    margin: 55px 0 0;
+    padding: 20px 0;
 }
 
 #powered-by {
