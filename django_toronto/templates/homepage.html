@@ -45,7 +45,7 @@
 
                             <h4>Add to calendar</h4>
                             <ul class='add-to-calendar-list'>
-                                <li class='google-calendar'>
+                                    <i class="ficon-google"></i>
                                     <a href="{% create_google_calendar_url next_event %}" title="Add to Google Calendar">Google</a>
                                 </li>
                                 <li class="icalendar">
@@ -54,9 +54,10 @@
                                 </li>
 
                                 {% if next_event.plancast_id %}
-                                    <li class="plancast">
-                                        <a href="http://plancast.com/p/{{ next_event.plancast_id }}/" title="View on Plancast">Plancast</a>
-                                    </li>
+                                <li class="plancast">
+                                    <i class="ficon-plancast"></i>
+                                    <a href="http://plancast.com/p/{{ next_event.plancast_id }}/" title="View on Plancast">Plancast</a>
+                                </li>
                                 {% endif %}
                             </ul>
                         </div>

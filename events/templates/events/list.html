@@ -52,21 +52,20 @@
                             {% endif %}
                             <h2 class='sub'>Add to calendar</h2>
                             <ul class='add-to-calendar-list'>
-                                <li class='google-calendar'>
-                                    <a href="{% create_google_calendar_url event %}" title="Add to Google Calendar">Google</a>
-                                </li>
-                                <li class='ics'>
-                                    <a href="{% url events.views.ics event.pk %}" title="iCalendar">iCalendar</a>
-                                </li>
-                                {% if event.plancast_id %}
-                                    <li class="plancast">
-                                        <a href="http://plancast.com/p/{{ event.plancast_id }}/" title="View on Plancast">Plancast</a>
-                                    </li>
-                                {% endif %}
+                                <i class="ficon-google"></i>
+                                <a href="{% create_google_calendar_url event %}" title="Add to Google Calendar">Google</a>
+                            </li>
                             <li class="icalendar">
                                 <i class="ficon-calendar"></i>
                                 <a href="{% url events.views.ics event.pk %}" title="Download iCalendar">iCalendar</a>
                             </li>
+
+                            {% if event.plancast_id %}
+                            <li class="plancast">
+                                <i class="ficon-plancast"></i>
+                                <a href="http://plancast.com/p/{{ event.plancast_id }}/" title="View on Plancast">Plancast</a>
+                            </li>
+                            {% endif %}
                             </ul>
                         </div>
                     </div>
