@@ -48,6 +48,11 @@
                                 <li class='google-calendar'>
                                     <a href="{% create_google_calendar_url next_event %}" title="Add to Google Calendar">Google</a>
                                 </li>
+                                <li class="icalendar">
+                                    <i class="ficon-calendar"></i>
+                                    <a href="{% url events.views.ics next_event.pk %}" title="Download iCalendar">iCalendar</a>
+                                </li>
+
                                 {% if next_event.plancast_id %}
                                     <li class="plancast">
                                         <a href="http://plancast.com/p/{{ next_event.plancast_id }}/" title="View on Plancast">Plancast</a>

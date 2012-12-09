@@ -2,6 +2,9 @@ from django.db import models
 
 from events.managers import EventManager
 
+from icalendar import Calendar, Event as ICSEvent
+from datetime import timedelta
+from django.utils.timezone import get_current_timezone
 
 class Location(models.Model):
     name = models.CharField(max_length=120)
@@ -23,3 +26,25 @@ class Event(models.Model):
 
     def __unicode__(self):
         return "{location} - {date}".format(location=self.location.name, date=self.date)
+
+    @property
+    def ics_string(self):
+        cal = Calendar()
+        cal.add('prodid', '-//Django Toronto//django-toronto.com//')
+        cal.add('version', '2.0')
+        event = ICSEvent()
+        event.add('summary', ("Django Meetup at %s" % (self.location.name,)))
+
+        timezone = get_current_timezone()
+        start_date = self.date.astimezone(timezone)
+        event.add('dtstart', start_date)
+
+        next_day = start_date + timedelta(days=1)
+        end_date = next_day.replace(hour=0, minute=0, second=0)
+        event.add('dtend', end_date)
+
+        event.add('location', self.location.address)
+        event.add('url', "http://django-toronto.com")
+
+        cal.add_component(event)
+        return cal.to_ical()
