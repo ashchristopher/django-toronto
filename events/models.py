@@ -44,7 +44,7 @@ class Event(models.Model):
         event.add('dtend', end_date)
 
         event.add('location', self.location.address)
-        event.add('url', "http://django-toronto.com")
+        event.add('url', "http://djangotoronto.com")
 
         cal.add_component(event)
         return cal.to_ical()
