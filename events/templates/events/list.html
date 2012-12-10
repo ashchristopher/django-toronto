@@ -57,7 +57,7 @@
                             </li>
                             <li class="icalendar">
                                 <i class="ficon-calendar"></i>
-                                <a href="{% url events.views.ics event.pk %}" title="Download iCalendar">iCalendar</a>
+                                <a href="{% url ics_download event.pk %}" title="Download iCalendar">iCalendar</a>
                             </li>
 
                             {% if event.plancast_id %}
