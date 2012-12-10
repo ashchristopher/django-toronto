@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, Http404
 
 from events.models import Event
 from events.mixins import NextEventMixin
@@ -38,5 +38,5 @@ def ics(request, event_id):
         event = Event.objects.get(pk=event_id)
         return HttpResponse(event.ics_string, content_type='text/calendar')
     except Event.DoesNotExist:
-        return HttpResponseNotFound()
+        raise Http404
 
