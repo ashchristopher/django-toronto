@@ -18,3 +18,4 @@ requests==0.13.2
 ssh==1.7.14
 tldextract==1.1
 wsgiref==0.1.2
+icalendar==3.2
