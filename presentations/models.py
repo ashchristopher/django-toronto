@@ -10,7 +10,6 @@ class Presentation(models.Model):
     title = models.CharField(max_length=120)
     url = models.URLField()
     embed_code = models.TextField()
-    owner = models.ForeignKey('auth.User')
     oembed = models.TextField(blank=True, null=True)
 
     date_added = models.DateTimeField(auto_now_add=True)
