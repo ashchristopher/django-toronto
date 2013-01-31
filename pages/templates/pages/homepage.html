@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/homepage.css" type="text/css" />
+{% endblock %}
+
+{% block cover_class %}hero-background{% endblock %}
+
+{% block main_content %}
+    <h1>Next Event</h1>
+{% endblock %}

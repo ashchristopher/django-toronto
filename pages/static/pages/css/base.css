@@ -1,0 +1,31 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #838383;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.cover {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 685px;
+}
+
+.container {
+    width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#main-content {
+    padding: 15px 0;
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 1px solid #d3dadd;
+    background-color: #fff;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DjangoToronto -- The Toronto Django communities monthly meetup!</title>
+        {% block css %}
+            <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+            <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/base.css" type="text/css" />
+        {% endblock %}
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <header>
+            <div class='container'>
+                <img src="{{ STATIC_URL }}images/logos/logo-small.png">
+            </div>
+        </header>
+
+        <section id='{% block cover_class %}{% endblock %}' class='cover'></section>
+        
+        <section id='main-content' class='container'>
+            {% block main_content %}{% endblock %}
+        </section>
+    </body>
+</html>

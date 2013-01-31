@@ -16,3 +16,7 @@ class HomepageView(NextEventMixin, TemplateView):
         }
 
         return self.render_to_response(context)
+
+
+class NewHomepageView(TemplateView):
+    template_name = 'pages/homepage.html'
