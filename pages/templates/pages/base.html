@@ -18,7 +18,9 @@
             </div>
         </header>
 
-        <section id='{% block cover_class %}{% endblock %}' class='cover'></section>
+        <section id='hero-background' class='cover'>
+            {% block hero %}{% endblock %}
+        </section>
         
         <section id='main-content' class='container'>
             {% block main_content %}{% endblock %}

@@ -9,6 +9,34 @@ body {
     overflow-x: hidden;
 }
 
+#main-content {
+    padding: 15px 0;
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 1px solid #d3dadd;
+    background-color: #fff;
+}
+
+#hero-background {
+    background-image: url("../images/hero-photo.jpg");
+}
+
+.hero {
+    
+}
+
+.hero h2 {
+    font-size: 42px;
+    font-weight: 300;
+    color: #333;
+    text-shadow: 2px 2px 8px #fff;
+}
+
+.hero span {
+    font-weight: 300;
+    font-size: 16px;
+    color: #666;
+}
+
 .cover {
     background-attachment: fixed;
     background-position: center center;
@@ -23,9 +51,9 @@ body {
     margin-left: auto;
 }
 
-#main-content {
-    padding: 15px 0;
-    border-top: 1px solid #c5c5c5;
-    border-bottom: 1px solid #d3dadd;
-    background-color: #fff;
+.boxed-inner {
+    position: absolute;
+    left: 120px;
+    top: 90px;
+    width: 600px;
 }

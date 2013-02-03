@@ -5,7 +5,7 @@ from presentations.models import Presentation
 
 
 class HomepageView(NextEventMixin, TemplateView):
-    template_name = 'homepage.html'
+    template_name = 'pages/homepage.html'
 
     def get(self, request):
         next_event = self._get_next_event()
@@ -16,7 +16,3 @@ class HomepageView(NextEventMixin, TemplateView):
         }
 
         return self.render_to_response(context)
-
-
-class NewHomepageView(TemplateView):
-    template_name = 'pages/homepage.html'
