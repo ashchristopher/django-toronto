@@ -115,7 +115,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.webdesign',
     'gunicorn',
-    'registration',
     'bootstrap',
     'events',
     'presentations',
@@ -172,9 +171,6 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda x: False,
     'ENABLE_STACKTRACES': True,
 }
-
-# django-registration settings
-ACCOUNT_ACTIVATION_DAYS = 7
 
 # django-storages settings
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
