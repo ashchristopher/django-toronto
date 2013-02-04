@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'contact_us',
     'pages',
+    'newsletters',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -179,6 +180,10 @@ STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'django-toronto'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+# MailChimp
+MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
+MAILCHIMP_LIST_ID = os.environ.get('MAILCHIMP_LIST_ID')  # ID for the DjangoToronto mailing list.
 
 
 try:

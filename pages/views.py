@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 
 from events.mixins import NextEventMixin
 from presentations.models import Presentation
+from newsletters.forms import NewsletterSignupModelForm
 
 
 class HomepageView(NextEventMixin, TemplateView):
@@ -13,6 +14,7 @@ class HomepageView(NextEventMixin, TemplateView):
         context = {
             'next_event': next_event,
             'latest_presentations': Presentation.objects.all().order_by('-pk')[0:4],
+            'newsletter_signup_form': NewsletterSignupModelForm(),
         }
 
         return self.render_to_response(context)

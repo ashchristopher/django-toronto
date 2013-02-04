@@ -11,6 +11,11 @@
         <div class='boxed-inner hero'>
             <h2>Sign up for the newsletter.</h2>
             <span>Receive event reminders and news about the Django Toronto meetup.</span>
+            <form method='post' action='{% url newsletter-signup %}'>
+                {% csrf_token %}
+                {{ newsletter_signup_form.as_p }}
+                <input type='submit' name='Signup' />
+            </form>
         </div>
     </div>
 {% endblock %}
