@@ -11,13 +11,13 @@ body {
 
 #main-content {
     padding: 15px 0;
-    border-top: 1px solid #c5c5c5;
+    /*border-top: 1px solid #c5c5c5;*/
     border-bottom: 1px solid #d3dadd;
     background-color: #fff;
 }
 
 #hero-background {
-    background-image: url("../images/hero-photo.jpg");
+    background-image: url("../images/7.jpg");
 }
 
 .hero {
