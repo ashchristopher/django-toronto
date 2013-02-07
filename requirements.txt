@@ -10,12 +10,13 @@ django-debug-toolbar==0.9.4
 django-registration==0.8
 django-storages==1.1.4
 gunicorn==0.14.5
+icalendar==3.2
 ipdb==0.6.1
 ipython==0.13
 pycrypto==2.6
 pytz==2012c
+raven==3.1.9
 requests==0.13.2
 ssh==1.7.14
 tldextract==1.1
 wsgiref==0.1.2
-icalendar==3.2

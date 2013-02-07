@@ -186,6 +186,9 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 # MailChimp settings
 MAILCHIMP_INLINE_SUBSCRIBE_TOKEN = os.environ.get('MAILCHIMP_INLINE_SUBSCRIBE_TOKEN')
 
+# Sentry settings
+SENTRY_DSN = os.environ.get('SENTRY_DSN')
+
 
 try:
     from local_settings import *
