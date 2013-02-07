@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.views.generic import TemplateView
 
 from events.mixins import NextEventMixin
@@ -13,6 +14,7 @@ class HomepageView(NextEventMixin, TemplateView):
         context = {
             'next_event': next_event,
             'latest_presentations': Presentation.objects.all().order_by('-pk')[0:4],
+            'mailchimp_inline_subscribe_token': settings.MAILCHIMP_INLINE_SUBSCRIBE_TOKEN,
         }
 
         return self.render_to_response(context)

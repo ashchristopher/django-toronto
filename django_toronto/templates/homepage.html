@@ -115,6 +115,21 @@
                 </div>
             </div>
         </div>
+
+        <div id='nav-mailing-list' class='row section'>
+            <div class="span3">
+                <h1>Mailing List</h1>
+            </div>
+            <div class="span9">
+                <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL">Email Address:  </label>
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock body %}
 

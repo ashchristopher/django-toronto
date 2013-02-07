@@ -183,6 +183,9 @@ AWS_STORAGE_BUCKET_NAME = 'django-toronto'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
+# MailChimp settings
+MAILCHIMP_INLINE_SUBSCRIBE_TOKEN = os.environ.get('MAILCHIMP_INLINE_SUBSCRIBE_TOKEN')
+
 
 try:
     from local_settings import *
