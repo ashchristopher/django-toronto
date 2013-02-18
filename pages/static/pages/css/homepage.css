@@ -1,0 +1,28 @@
+#hero-background {
+    background-image: url("../images/4.jpg");
+}
+
+#hero {
+    margin-top: 200px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-weight: 900;
+    text-shadow: 0 0 1px rgba(0,0,0,0.8),0 0 35px rgba(0,0,0,0.5);
+}
+
+#logo {
+    margin: auto;
+    width: 600px;
+    display: block;
+}
+
+.cover {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 685px;
+}
+

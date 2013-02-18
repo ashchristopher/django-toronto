@@ -2,12 +2,21 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 20px;
-    color: #838383;
+    color: #fff;
     background-color: #fff;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
 }
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
 
 #main-content {
     padding: 15px 0;
@@ -16,44 +25,8 @@ body {
     background-color: #fff;
 }
 
-#hero-background {
-    background-image: url("../images/7.jpg");
-}
-
-.hero {
-    
-}
-
-.hero h2 {
-    font-size: 42px;
-    font-weight: 300;
-    color: #333;
-    text-shadow: 2px 2px 8px #fff;
-}
-
-.hero span {
-    font-weight: 300;
-    font-size: 16px;
-    color: #666;
-}
-
-.cover {
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 685px;
-}
-
 .container {
     width: 940px;
     margin-right: auto;
     margin-left: auto;
-}
-
-.boxed-inner {
-    position: absolute;
-    left: 120px;
-    top: 90px;
-    width: 600px;
 }
