@@ -3,7 +3,7 @@
 }
 
 #hero {
-    margin-top: 200px;
+    margin-top: 150px;
     text-align: center;
 }
 
@@ -12,10 +12,39 @@
     text-shadow: 0 0 1px rgba(0,0,0,0.8),0 0 35px rgba(0,0,0,0.5);
 }
 
+#hero p {
+    color: #fff;
+    font-size: 16px;
+
+}
+
 #logo {
     margin: auto;
     width: 600px;
     display: block;
+    padding-bottom: 30px;
+}
+
+#main-content h2 {
+    font-weight: 700;
+    font-size: 3em;
+    padding-bottom: 25px;
+}
+
+#next-event-map {
+    height: 400px;
+    border: 2px solid #d3dadd;
+}
+
+#location address {
+    font-size: 14px;
+}
+
+#location span.venue {
+    display: block;
+    font-size: 4em;
+    font-weight: 300;
+    padding-bottom: 35px;
 }
 
 .cover {

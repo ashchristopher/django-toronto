@@ -6,11 +6,40 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/mailchimp-signup.css" type="text/css" />
 {% endblock %}
 
+{% block js-libs %}
+    {{ block.super }}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src='{{ STATIC_URL }}js/gmaps.js'></script>
+{% endblock %}
+
+{% block javascript %}
+    <script type='text/javascript'>
+        var map = new GMaps({
+            div: '#next-event-map',
+            lat: '{{ next_event.location.latitude }}',
+            lng: '{{ next_event.location.longitude }}',
+            zoom: 15,
+            zoomControlOpt: {
+                style: 'DEFAULT',
+                position: 'TOP_RIGHT'
+            }
+        });
+
+        map.addMarker({
+            lat: '{{ next_event.location.latitude }}',
+            lng: '{{ next_event.location.longitude }}',
+            title: '{{ next_event.location.name }}',
+        });
+    </script>
+{% endblock %}
+
 
 {% block hero %}
     <div class='container'>
         <div id='hero'>
             <img id='logo' src='{{ STATIC_URL }}images/logos/logo-inverted.png'>
+            <p>asdasdsa</p>
+
             <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
@@ -21,5 +50,23 @@
 
 
 {% block main_content %}
-    <h2>Next Event</h2>
+    <div id='location' class='row section'>
+        <h2>Next Event</h2>
+        <div id='next-event-map' class='span6'></div>
+        <div class='span4'>
+            <span class='venue'>{{ next_event.location.name }}</span>
+            <address>
+                {{ next_event.location.address|linebreaksbr }}
+            </address>
+        </div>
+    </div>
+
+    <div class='row section'>
+        Host a Meetup
+    </div>
+
+    <div class='row section'>
+        Presentations
+    </div>
+
 {% endblock %}

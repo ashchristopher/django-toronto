@@ -8,6 +8,11 @@
             <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/base.css" type="text/css" />
         {% endblock %}
 
+        {% block js-libs %}
+            <script src='{{ STATIC_URL }}js/jquery.min.js'></script>
+            <script src='{{ STATIC_URL }}js/jquery.viewport.mini.js'></script>
+        {% endblock %}
+
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     </head>
 
@@ -22,8 +27,9 @@
             {% block hero %}{% endblock %}
         </section>
 
-        <section id='main-content' class='container'>
+        <div id='main-content' class='container'>
             {% block main_content %}{% endblock %}
-        </section>
+        </div>
     </body>
+    {% block javascript %}{% endblock %}
 </html>
