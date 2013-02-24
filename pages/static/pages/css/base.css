@@ -27,5 +27,6 @@ input {
     font-size: 3em;
     margin: 25px auto;
     font-weight: 900;
-    display: block
+    display: block;
+    line-height: 1em;
 }

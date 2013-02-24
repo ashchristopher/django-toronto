@@ -31,6 +31,18 @@
             title: '{{ next_event.location.name }}',
         });
     </script>
+
+    <script type='text/javascript'>
+        $( document ).ready(function() {
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 20) {
+                    $('#logo').fadeOut('slow');
+                } else {
+                    $('#logo').fadeIn('slow');
+                }
+            });
+        });
+    </script>
 {% endblock %}
 
 
@@ -46,7 +58,7 @@
 {% block main_content %}
     <div id='newsletter-signup' class='row'>
         <div class='container'>
-            <div id='newsletter-signup-container' class='span12'>
+            <div class='span12'>
                 <div class='row'>
                     <div class='span12'>
                         <span class='section-header'>Sign up for the Django Toronto newsletter.</span>
@@ -60,29 +72,32 @@
                         </p>
                     </div>
                 </div>
-                <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-                </form>
+                <div class='row'>
+                    <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class='container'>
-        <div id='location' class='row'>
-            <div class='row'>
-                <h2 class='span12'>Next Event</h2>
-            </div>
-
-            <div class='row'>
-                <div id='next-event-map' class='span12'></div>
-            </div>
-            <div class='row'>
-                <div id='venue' class='span6'>
-                    <span class='venue'>{{ next_event.location.name }}</span>
-                    <address>
-                        {{ next_event.location.address|linebreaksbr }}
-                    </address>
+    <div id='upcoming-event' class='row'>
+        <div class='container'>
+            <div class='span12'>
+                <div class='row'>
+                    <div id='next-event-map' class='span12'></div>
+                </div>
+                <div class='row'>
+                    <h2 class='span12'>Upcoming Event</h2>
+                </div>
+                <div class='row'>
+                    <div id='venue' class='span6'>
+                        <span class='venue'>{{ next_event.location.name }}</span>
+                        <address>
+                            {{ next_event.location.address|linebreaksbr }}
+                        </address>
+                    </div>
                 </div>
             </div>
         </div>
