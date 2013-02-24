@@ -3,7 +3,7 @@
 }
 
 #hero {
-    margin-top: 150px;
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -31,9 +31,22 @@
     padding-bottom: 25px;
 }
 
+#newsletter-signup {
+    text-align: center;
+    background-color: #EEE;
+    padding: 30px 0;
+}
+
+#newsletter-signup-container {
+    /*padding-top: 70px;*/
+}
+
 #next-event-map {
-    height: 400px;
-    border: 2px solid #d3dadd;
+    height: 150px;
+}
+
+#venue {
+    margin-left: 30px;
 }
 
 #location address {
@@ -54,4 +67,3 @@
     background-size: cover;
     height: 685px;
 }
-

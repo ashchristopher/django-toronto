@@ -1,6 +1,5 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
     line-height: 20px;
     background-color: #fff;
     padding: 0;
@@ -21,19 +20,12 @@ input {
 }
 
 #main-content {
-    padding: 15px 0;
     background-color: #fff;
 }
 
-.container {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.section {
-    border-bottom: 1px solid #d3dadd;
-    padding: 10px 0 20px 0;
-}
-
-.section div {
+.section-header {
+    font-size: 3em;
+    margin: 25px auto;
+    font-weight: 900;
+    display: block
 }

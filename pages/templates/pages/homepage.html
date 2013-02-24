@@ -38,35 +38,54 @@
     <div class='container'>
         <div id='hero'>
             <img id='logo' src='{{ STATIC_URL }}images/logos/logo-inverted.png'>
-            <p>asdasdsa</p>
-
-            <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-            </form>
         </div>
     </div>
 {% endblock %}
 
 
 {% block main_content %}
-    <div id='location' class='row section'>
-        <h2>Next Event</h2>
-        <div id='next-event-map' class='span6'></div>
-        <div class='span4'>
-            <span class='venue'>{{ next_event.location.name }}</span>
-            <address>
-                {{ next_event.location.address|linebreaksbr }}
-            </address>
+    <div id='newsletter-signup' class='row'>
+        <div class='container'>
+            <div id='newsletter-signup-container' class='span12'>
+                <div class='row'>
+                    <div class='span12'>
+                        <span class='section-header'>Sign up for the Django Toronto newsletter.</span>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='span6 offset3'>
+                        <p class='info'>
+                            Sign up for the Django Toronto newsletter to receive announcements about meetups and
+                            venues as well as a reminder before each event.
+                        </p>
+                    </div>
+                </div>
+                <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                </form>
+            </div>
         </div>
     </div>
 
-    <div class='row section'>
-        Host a Meetup
-    </div>
+    <div class='container'>
+        <div id='location' class='row'>
+            <div class='row'>
+                <h2 class='span12'>Next Event</h2>
+            </div>
 
-    <div class='row section'>
-        Presentations
+            <div class='row'>
+                <div id='next-event-map' class='span12'></div>
+            </div>
+            <div class='row'>
+                <div id='venue' class='span6'>
+                    <span class='venue'>{{ next_event.location.name }}</span>
+                    <address>
+                        {{ next_event.location.address|linebreaksbr }}
+                    </address>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
