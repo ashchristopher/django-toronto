@@ -78,3 +78,9 @@
     width: 140px;
     height: 140px;
 }
+
+.avatar {
+    border-radius: 500px;
+    width: 65px;
+    height: 65px;
+}

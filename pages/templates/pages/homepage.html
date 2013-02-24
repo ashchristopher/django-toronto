@@ -82,22 +82,39 @@
 
     <div id='upcoming-event' class='row section'>
         <div class='container'>
-            <div class='span12'>
-                <div class='row'>
-                    <div id='next-event-map' class='span12'></div>
-                </div>
-                <div class='row'>
-                    <h2 class='span12'>Upcoming Event</h2>
-                </div>
-                <div class='row'>
-                    <div id='venue' class='span6'>
-                        <span class='venue'>{{ next_event.location.name }}</span>
-                        <address>
-                            {{ next_event.location.address|linebreaksbr }}
-                        </address>
-                    </div>
+            <div class='row'>
+                <div id='next-event-map' class='span12'></div>
+            </div>
+            <div class='row'>
+                <h2 class='span12'>Upcoming Event</h2>
+            </div>
+            <div class='row'>
+                <div id='venue' class='span6'>
+                    <span class='venue'>{{ next_event.location.name }}</span>
+                    <address>
+                        {{ next_event.location.address|linebreaksbr }}
+                    </address>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class='row section'>
+        <div class='container'>
+            <div class='row'>
+                <h2 class='span12'>Latest Presentations</h2>
+            </div>
+
+            {% for presentation in latest_presentations %}
+                <div class='row'>
+                    <div class='span4'>
+                        <img src='{{ STATIC_URL }}/images/no-avatar.jpg' class='avatar'> Title
+                    </div>
+                    <div class='span4 offset4'>
+                        Details
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
