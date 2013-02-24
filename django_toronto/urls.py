@@ -14,7 +14,6 @@ urlpatterns = patterns('',
     url(r'^presentations/', include('presentations.urls')),
     url(r'^events/', include('events.urls')),
     url(r'^contact-us/', include('contact_us.urls')),
-    url(r'^newsletter/', include('newsletters.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

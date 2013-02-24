@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'contact_us',
     'pages',
-    'newsletters',
 )
 
 # A sample logging configuration. The only tangible logging
