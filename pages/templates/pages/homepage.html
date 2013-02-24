@@ -56,33 +56,31 @@
 
 
 {% block main_content %}
-    <div id='newsletter-signup' class='row'>
+    <div id='newsletter-signup' class='row buffer'>
         <div class='container'>
-            <div class='span12'>
-                <div class='row'>
-                    <div class='span12'>
-                        <span class='section-header'>Sign up for the Django Toronto newsletter.</span>
-                    </div>
+            <div class='row'>
+                <div class='span12'>
+                    <span class='section-header'>Sign up for the Django Toronto newsletter.</span>
                 </div>
-                <div class='row'>
-                    <div class='span6 offset3'>
-                        <p class='info'>
-                            Sign up for the Django Toronto newsletter to receive announcements about meetups and
-                            venues as well as a reminder before each event.
-                        </p>
-                    </div>
+            </div>
+            <div class='row'>
+                <div class='span8 offset2'>
+                    <p class='info'>
+                        Sign up for the Django Toronto newsletter to receive announcements about meetups and
+                        venues as well as a reminder before each event.
+                    </p>
                 </div>
-                <div class='row'>
-                    <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
-                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-                    </form>
-                </div>
+            </div>
+            <div class='row'>
+                <form action="http://djangotoronto.us6.list-manage1.com/subscribe/post?u={{ mailchimp_inline_subscribe_token }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Enter your email...'>
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                </form>
             </div>
         </div>
     </div>
 
-    <div id='upcoming-event' class='row'>
+    <div id='upcoming-event' class='row section'>
         <div class='container'>
             <div class='span12'>
                 <div class='row'>
@@ -99,6 +97,45 @@
                         </address>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='hosting-companies' class='row buffer section'>
+        <div class='container'>
+            <div class='row'>
+                <div class='span12'>
+                    <span class='section-header'>Are you interested in hosting a meetup?</span>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='span8 offset2'>
+                    <p class='info'>
+                        Hosting a Django Toronto meetup is easy - just provide a venue, some snacks, beverages and most
+                        importantly some talks.
+                    </p>
+                </div>
+            </div>
+            <div id='badges' class='row'>
+                <div class='span12'>
+                    <div class='row'>
+                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_921_building.svg' alt='Venue' class='badge'></div>
+                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_7914_food.svg' alt='Food' class='badge'></div>
+                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_634_beverage.svg' alt='Refreshments' class='badge'></div>
+                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_3059_presentation.svg' alt='Presentations' class='badge'></div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='span8 offset2'>
+                    <p class='info'>
+                        Join the growing list of Toronto companies that give back to the community by hosting
+                        the meetup.
+                    </p>
+                </div>
+            </div>
+            <div class='row'>
+
             </div>
         </div>
     </div>
