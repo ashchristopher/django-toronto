@@ -53,8 +53,9 @@
 
 .buffer {
     text-align: center;
-    background-color: #EEE;
+    background-color: #234f32;
     padding: 30px 0;
+    color: #fff;
 }
 
 .info {
