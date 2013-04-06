@@ -6,8 +6,10 @@ from icalendar import Calendar, Event as ICSEvent
 from datetime import timedelta
 from django.utils.timezone import get_current_timezone
 
+
 class Location(models.Model):
     name = models.CharField(max_length=120)
+    description = models.TextField(blank=True, default='')
     address = models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()

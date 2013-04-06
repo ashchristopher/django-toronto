@@ -1,5 +1,7 @@
 {% extends 'pages/base.html' %}
 
+{% load webdesign %}
+
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/homepage.css" type="text/css" />
@@ -83,17 +85,19 @@
     <div id='upcoming-event' class='row section'>
         <div class='container'>
             <div class='row'>
-                <div id='next-event-map' class='span12'></div>
+                <h2 class='span12'>{{ next_event.location.name }}</h2>
             </div>
             <div class='row'>
-                <h2 class='span12'>Upcoming Event</h2>
-            </div>
-            <div class='row'>
-                <div id='venue' class='span6'>
-                    <span class='venue'>{{ next_event.location.name }}</span>
+                <div class='span5'>
+                    {% lorem 1 p %}
+                </div>
+                <div id='venue' class='span3'>
                     <address>
                         {{ next_event.location.address|linebreaksbr }}
                     </address>
+                </div>
+                <div class='span4'>
+                    <div id='next-event-map'></div>
                 </div>
             </div>
         </div>
@@ -107,11 +111,21 @@
 
             {% for presentation in latest_presentations %}
                 <div class='row'>
-                    <div class='span4'>
-                        <img src='{{ STATIC_URL }}/images/no-avatar.jpg' class='avatar'> Title
+                    <div class='span2'>
+                        {% if presentation.twitter_handle %}
+                            <img src='https://api.twitter.com/1/users/profile_image?screen_name={{ presentation.twitter_handle }}&size=bigger' class='avatar'>
+                        {% else %}
+                            <img src='{{ STATIC_URL }}/images/no-avatar.jpg' class='avatar'>
+                        {% endif %}
                     </div>
-                    <div class='span4 offset4'>
-                        Details
+
+                    <div class='span10'>
+                        <div class='row'>
+                            <span>{{ presentation.title }}</span>
+                        </div>
+                        <div class='row'>
+                            Details
+                        </div>
                     </div>
                 </div>
             {% endfor %}

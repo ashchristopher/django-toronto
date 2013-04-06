@@ -8,13 +8,14 @@ from django.core.exceptions import ValidationError
 
 class Presentation(models.Model):
     title = models.CharField(max_length=120)
+    twitter_handle = models.CharField(max_length=75, blank=True, default='')
     url = models.URLField()
     embed_code = models.TextField()
     oembed = models.TextField(blank=True, null=True)
 
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-    
+
     def __unicode__(self):
         return self.title
 
