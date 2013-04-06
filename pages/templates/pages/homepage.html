@@ -1,6 +1,7 @@
 {% extends 'pages/base.html' %}
 
 {% load webdesign %}
+{% load presentations %}
 
 {% block css %}
     {{ block.super }}
@@ -111,24 +112,10 @@
 
             {% for presentation in latest_presentations %}
                 <div class='row'>
-                    <div class='span2'>
-                        {% if presentation.twitter_handle %}
-                            <img src='https://api.twitter.com/1/users/profile_image?screen_name={{ presentation.twitter_handle }}&size=bigger' class='avatar'>
-                        {% else %}
-                            <img src='{{ STATIC_URL }}/images/no-avatar.jpg' class='avatar'>
-                        {% endif %}
-                    </div>
-
-                    <div class='span10'>
-                        <div class='row'>
-                            <span>{{ presentation.title }}</span>
-                        </div>
-                        <div class='row'>
-                            Details
-                        </div>
-                    </div>
+                    {% display_presentation presentation %}
                 </div>
             {% endfor %}
+
         </div>
     </div>
 
