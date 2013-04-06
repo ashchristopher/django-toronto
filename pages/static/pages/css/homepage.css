@@ -26,7 +26,6 @@
 }
 
 #main-content h2 {
-    font-weight: 700;
     font-size: 3em;
     padding-bottom: 25px;
 }
@@ -41,7 +40,7 @@
 }
 
 #venue {
-    margin-left: 30px;
+    text-align: right;
 }
 
 .cover {
@@ -52,11 +51,10 @@
     height: 685px;
 }
 
-.buffer {
+#newsletter-signup {
     text-align: center;
-    /*background-color: #FFF;*/
-    padding: 30px 0;
-    /*color: #fff;*/
+    background-color: #555;
+    color: #cddf58;
 }
 
 .info {
@@ -66,6 +64,14 @@
 
 .section {
     padding: 35px 0;
+}
+
+h2.section-header {
+    font-weight: 100;
+}
+
+.presentation-row {
+    padding-bottom: 25px;
 }
 
 #badges {
@@ -81,12 +87,25 @@
 }
 
 .avatar {
-    border-radius: 500px;
     width: 73px;
     height: 73px;
+}
+
+.presentation-author {
+    text-align: center;
+}
+
+h3.presentation-title {
+    font-weight: 100;
 }
 
 #upcoming-event {
     /*background-color: #4A8727;*/
     /*color: #fff;*/
+}
+
+#hosting-companies {
+    text-align: center;
+    background-color: #555;
+    color: #fdb813;
 }

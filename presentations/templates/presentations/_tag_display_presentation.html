@@ -1,20 +1,42 @@
-<div class='span1'>
-    {% if presentation.twitter_handle %}
-        <img src='https://api.twitter.com/1/users/profile_image?screen_name={{ presentation.twitter_handle }}&size=bigger' class='avatar'>
-    {% else %}
-        <img src='{{ static_url }}/images/no-avatar.jpg' class='avatar'>
-    {% endif %}
-</div>
-
-<div class='span5`'>
+<div class='span2 presentation-author'>
     <div class='row'>
-        <div class='span5'>
-            <h4>{{ presentation.title }}</h4>
+        <div class='span2'>
+            {% if presentation.twitter_handle %}
+                <img src='https://api.twitter.com/1/users/profile_image?screen_name={{ presentation.twitter_handle }}&size=bigger' class='avatar img-polaroid'>
+            {% else %}
+                <img src='{{ static_url }}/images/no-avatar.jpg' class='avatar img-polaroid'>
+            {% endif %}
         </div>
     </div>
+
     <div class='row'>
-        <div class='span5'>
-            <small>{{ presentation.date_added|date:'F j, Y'}}</small>
+        <div class='span2'
+            <small>{{ presentation.get_oembed.author_name }}</small>
+        </div>
+    </div>
+</div>
+
+<div class='span10'>
+    <div class='row'>
+        <div class='span6'>
+            <div class='row'>
+                <div class='span6'>
+                    <h3 class='presentation-title'>{{ presentation.title }}</h3>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='span6'>
+                    <small>{{ presentation.date_added|date:'F j, Y'}}</small>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='span6'>
+                    Follow {{ presentation.get_oembed.author_name }} on twitter.
+                </div>
+            </div>
+        </div>
+        <div class='span4'>
+            {{ presentation.embed_code|safe }}
         </div>
     </div>
 </div>

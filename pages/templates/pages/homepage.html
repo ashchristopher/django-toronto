@@ -59,7 +59,7 @@
 
 
 {% block main_content %}
-    <div id='newsletter-signup' class='row buffer'>
+    <div id='newsletter-signup' class='row'>
         <div class='container'>
             <div class='row'>
                 <div class='span12'>
@@ -86,13 +86,18 @@
     <div id='upcoming-event' class='row section'>
         <div class='container'>
             <div class='row'>
-                <h2 class='span12'>{{ next_event.location.name }}</h2>
+                <h2 class='section-header span12'>Next Event</h2>
+            </div>
+            <div class='row'>
+                <div class='span11'>
+                    <h3>{{ next_event.location.name }}</h3>
+                </div>
             </div>
             <div class='row'>
                 <div class='span5'>
-                    {% lorem 1 p %}
+                    {{ next_event.location.description|linebreaks }}
                 </div>
-                <div id='venue' class='span3'>
+                <div id='venue' class='span2 offset1'>
                     <address>
                         {{ next_event.location.address|linebreaksbr }}
                     </address>
@@ -107,11 +112,11 @@
     <div class='row section'>
         <div class='container'>
             <div class='row'>
-                <h2 class='span12'>Latest Presentations</h2>
+                <h2 class='section-header span12'>Latest Presentations</h2>
             </div>
 
             {% for presentation in latest_presentations %}
-                <div class='row'>
+                <div class='row presentation-row'>
                     {% display_presentation presentation %}
                 </div>
             {% endfor %}
@@ -119,7 +124,7 @@
         </div>
     </div>
 
-    <div id='hosting-companies' class='row buffer section'>
+    <div id='hosting-companies' class='row section'>
         <div class='container'>
             <div class='row'>
                 <div class='span12'>
@@ -157,5 +162,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
