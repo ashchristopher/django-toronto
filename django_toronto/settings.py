@@ -82,13 +82,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.transaction.TransactionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -103,6 +103,18 @@ WSGI_APPLICATION = 'django_toronto.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'django_toronto', 'templates')
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    "pages.context_processors.page_settings",
+)
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -184,6 +196,8 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
 MAILCHIMP_LIST_ID = os.environ.get('MAILCHIMP_LIST_ID')  # ID for the DjangoToronto mailing list.
 
+# Google Analytics
+GA_TRACKING_CODE = os.environ.get('GA_TRACKING_CODE')
 
 try:
     from local_settings import *
