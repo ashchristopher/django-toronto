@@ -30,9 +30,10 @@ input {
 .section-header {
     font-size: 3em;
     margin: 25px auto;
-    font-weight: 900;
+    font-weight: 100;
     display: block;
     line-height: 1em;
+    font-style: italic;
 }
 
 a {
