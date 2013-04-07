@@ -69,8 +69,7 @@
             <div class='row'>
                 <div class='span8 offset2'>
                     <p class='info'>
-                        Sign up for the Django Toronto newsletter to receive announcements about meetups and
-                        venues as well as a reminder before each event.
+                        Receive announcements about meetups and venues as well as a reminder before each event.
                     </p>
                 </div>
             </div>
@@ -90,7 +89,7 @@
             </div>
             <div class='row'>
                 <div class='span11'>
-                    <h3>{{ next_event.location.name }}</h3>
+                    <h3>{{ next_event.location.name }} |{{ next_event.date|date:'F j, Y'}}</h3>
                 </div>
             </div>
             <div class='row'>
@@ -141,7 +140,7 @@
 
                     <p>
                         If you answered yes to any of these questions, you might want to host a Django Toronto
-                        meetup! <a href=''>Contact</a> us for more information.
+                        meetup! <a href='{% url contact_us %}'>Contact</a> us for more information.
                     </p>
 
                 </div>
