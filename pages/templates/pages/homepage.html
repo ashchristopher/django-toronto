@@ -1,6 +1,7 @@
 {% extends 'pages/base.html' %}
 
 {% load presentations %}
+{% load google_calendar %}
 
 {% block css %}
     {{ block.super }}
@@ -100,6 +101,23 @@
                     <address>
                         {{ next_event.location.address|linebreaksbr }}
                     </address>
+                    <h5>Add to your calendar</h5>
+                    <ul class='calendar'>
+                        <li>
+                            <a href="{% create_google_calendar_url next_event %}" title="Add to Google Calendar">Google</a>
+                            <i class="ficon-google"></i>
+                        </li>
+                        <li class="icalendar">
+                            <a href="{% url ics_download next_event.pk %}" title="Download iCalendar">iCalendar</a>
+                            <i class="ficon-calendar"></i>
+                        </li>
+                        {% if next_event.plancast_id %}
+                        <li class="plancast">
+                            <a href="http://plancast.com/p/{{ next_event.plancast_id }}/" title="View on Plancast">Plancast</a>
+                            <i class="ficon-plancast"></i>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
                 <div class='span4'>
                     <div id='next-event-map'></div>

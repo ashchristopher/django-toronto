@@ -54,11 +54,6 @@
     padding: 30px 0;
 }
 
-#upcoming-event {
-    /*background-color: #4A8727;*/
-    /*color: #fff;*/
-}
-
 .hosting-header {
     text-align: center;
 }
@@ -77,4 +72,8 @@
 
 .checklist li {
     padding-bottom: 10px;
+}
+
+.calendar {
+    list-style-type: none;
 }
