@@ -9,7 +9,7 @@ class PresentationsListView(TemplateView):
 
     def get(self, request):
         page = request.GET.get('page')
-        all_presentations = Presentation.objects.all()
+        all_presentations = Presentation.objects.all().order_by('-id')
         paginator = Paginator(all_presentations, 4)
 
         try:
@@ -23,6 +23,7 @@ class PresentationsListView(TemplateView):
 
         context = {
             'presentations': presentations,
+            'paginator': paginator,
         }
 
         return self.render_to_response(context)

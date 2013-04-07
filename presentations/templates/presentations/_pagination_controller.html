@@ -1,31 +1,21 @@
-<div class='pagination'>
-    <ul>
-        <li {% if not presentations.has_previous %}class='disabled'{% endif %}>
-            {% if presentations.has_previous %}
-                <a href='?page={{ presentations.previous_page_number }}' class='previous'>
-                    <i class="icon-chevron-left"></i>
-                    Previous
-                </a>
-            {% else %}
-                <a href='#' class='previous'>
-                    <i class="icon-chevron-left"></i>
-                    Previous
-                </a>
-            {% endif %}
-            </a>
-        </li>
-        <li {% if not presentations.has_next %}class='disabled'{% endif %}>
-            {% if presentations.has_next %}
-                <a href='?page={{ presentations.next_page_number }}' class='next'>
-                    Next
-                    <i class="icon-chevron-right"></i>
-                </a>
-            {% else %}
-                <a href='#' class='next'>
-                    Next
-                    <i class="icon-chevron-right"></i>
-                </a>
-            {% endif %}
-        </li>
-    </ul>
-</div>
+<ul>
+    {% if presentations.has_previous %}
+        <li><a href='?page={{ presentations.previous_page_number }}' class='previous'>&laquo;</a></li>
+    {% else %}
+        <li class='disabled'><span class='previous'>&laquo;</a></li>
+    {% endif %}
+
+    {% for page_num in presentations.paginator.page_range %}
+        {% if page_num == presentations.number %}
+            <li class='selected_page active'><span>{{ page_num }}</span></li>
+        {% else %}
+            <li><a href='?page={{ page_num }}'>{{ page_num }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    {% if presentations.has_next %}
+        <li><a href='?page={{ presentations.next_page_number }}' class='next'>&raquo;</a></li>
+    {% else %}
+        <li><span class='next'>&raquo;</span></li>
+    {% endif %}
+</ul>

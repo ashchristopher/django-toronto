@@ -25,6 +25,14 @@
     padding-bottom: 30px;
 }
 
+.cover {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 685px;
+}
+
 #main-content h2 {
     font-size: 3em;
     padding-bottom: 25px;
@@ -35,20 +43,8 @@
     border: 1px;
 }
 
-#hosting-companies {
-
-}
-
 #venue {
     text-align: right;
-}
-
-.cover {
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 685px;
 }
 
 #newsletter-signup {
@@ -57,55 +53,27 @@
     color: #cddf58;
 }
 
-.info {
-    font-size: 20px;
-    font-weight: 200;
-}
-
-.section {
-    padding: 35px 0;
-}
-
-h2.section-header {
-    font-weight: 100;
-}
-
-.presentation-row {
-    padding-bottom: 25px;
-}
-
-#badges {
-    margin: 50px 0;
-}
-
-.badge {
-    padding: 35px;
-    border-radius: 500px;
-    background-color: #bac151;
-    width: 140px;
-    height: 140px;
-}
-
-.avatar {
-    width: 73px;
-    height: 73px;
-}
-
-.presentation-author {
-    text-align: center;
-}
-
-h3.presentation-title {
-    font-weight: 100;
-}
-
 #upcoming-event {
     /*background-color: #4A8727;*/
     /*color: #fff;*/
 }
 
-#hosting-companies {
+.hosting-header {
     text-align: center;
+}
+
+#hosting-companies {
     background-color: #555;
-    color: #fdb813;
+    color: #cddf58;
+}
+
+.checklist {
+    color: #eee;
+    list-style-type: none;
+    font-size: 17.5px;
+    font-weight: bold;
+}
+
+.checklist li {
+    padding-bottom: 10px;
 }

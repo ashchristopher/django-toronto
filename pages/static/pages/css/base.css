@@ -23,10 +23,30 @@ input {
     background-color: #fff;
 }
 
+#header {
+    padding-bottom: 5px;
+}
+
 .section-header {
     font-size: 3em;
     margin: 25px auto;
     font-weight: 900;
     display: block;
     line-height: 1em;
+}
+
+a {
+    color: #6F8F2D;
+}
+
+a:hover {
+    color: #EB540A;
+}
+
+.section {
+    padding: 35px 0;
+}
+
+h2.section-header {
+    font-weight: 100;
 }

@@ -1,11 +1,11 @@
 {% extends 'pages/base.html' %}
 
-{% load webdesign %}
 {% load presentations %}
 
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/homepage.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/presentation.css" type="text/css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/mailchimp-signup.css" type="text/css" />
 {% endblock %}
 
@@ -112,7 +112,7 @@
     <div class='row section'>
         <div class='container'>
             <div class='row'>
-                <h2 class='section-header span12'>Latest Presentations</h2>
+                <h2 class='section-header span12'>Latest Presentations <small><a href="{% url presentations-list %}">See all...</a></small></h2>
             </div>
 
             {% for presentation in latest_presentations %}
@@ -127,38 +127,24 @@
     <div id='hosting-companies' class='row section'>
         <div class='container'>
             <div class='row'>
-                <div class='span12'>
-                    <span class='section-header'>Are you interested in hosting a meetup?</span>
+                <div class='span8 offset2 hosting-header'>
+                    <span class='section-header'>Interested in hosting a meetup?</span>
                 </div>
             </div>
             <div class='row'>
-                <div class='span8 offset2'>
-                    <p class='info'>
-                        Hosting a Django Toronto meetup is easy - just provide a venue, some snacks, beverages and most
-                        importantly some talks.
-                    </p>
-                </div>
-            </div>
-            <div id='badges' class='row'>
-                <div class='span12'>
-                    <div class='row'>
-                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_921_building.svg' alt='Venue' class='badge'></div>
-                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_7914_food.svg' alt='Food' class='badge'></div>
-                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_634_beverage.svg' alt='Refreshments' class='badge'></div>
-                        <div class='span3'><img src='{{ STATIC_URL }}images/icons/noun_project_3059_presentation.svg' alt='Presentations' class='badge'></div>
-                    </div>
-                </div>
-            </div>
-            <div class='row'>
-                <div class='span8 offset2'>
-                    <p class='info'>
-                        Join the growing list of Toronto companies that give back to the community by hosting
-                        the meetup.
-                    </p>
-                </div>
-            </div>
-            <div class='row'>
+                <div class='span6 offset3'>
+                    <ul class='checklist'>
+                        <li>Does your companies technology stack include Django or Python?</li>
+                        <li>Are you looking recruit top talent?</li>
+                        <li>Do you want to give back to the Toronto development community?</li>
+                    </ul>
 
+                    <p>
+                        If you answered yes to any of these questions, you might want to host a Django Toronto
+                        meetup! <a href=''>Contact</a> us for more information.
+                    </p>
+
+                </div>
             </div>
         </div>
     </div>

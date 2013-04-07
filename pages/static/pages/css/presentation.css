@@ -1,0 +1,21 @@
+.presentation-row {
+    padding-bottom: 25px;
+}
+
+.avatar {
+    width: 73px;
+    height: 73px;
+}
+
+.presentation-author {
+    text-align: center;
+}
+
+.presentation-title {
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.selected_page {
+    background-color: #6F8F2D;
+}

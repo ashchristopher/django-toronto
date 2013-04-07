@@ -1,67 +1,52 @@
-{% extends 'full_base.html' %}
+{% extends 'pages/base.html' %}
 
-{% block container %}
+{% load presentations %}
 
-    <div class='row top-pagination'>
-        <div class='span4'>
-            {% include 'presentations/_pagination_controller.html' %}
-        </div>
-        <div class='span8 offset4 search'>
-            <form>
-                <i class="icon-search"></i> <input type='text'>
-            </form>
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}pages/css/presentation.css" type="text/css" />
+    <style>
+        #hero-background {
+            background-image: url("{{ STATIC_URL }}pages/images/ttc_buttons.jpg");
+        }
+
+        .cover {
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 350px;
+        }
+    </style>
+{% endblock %}
+
+{% block hero %}
+    <div class='container'>
+        <div id='hero'>
         </div>
     </div>
+{% endblock %}
 
-    {% for presentation in presentations %}
-        <div class='row presentation presentation-bucket'>
-            <div class='span7'>
-                {{ presentation.embed_code|safe }}
-            </div>
-            <div class='span4'>
-                <h2>{{ presentation.get_oembed.author_name }}</h2>
-                <div class='row'>
-                    <div class='span4'>
-                        <a href='{{ presentation.url }}'><i class="icon-globe"></i> Link to this presentation</a>
-                    </div>
-                </div>
-                
-                <div class='row'>
-                    <div class='span4'>
-                        <a href='{{ presentation.get_oembed.author_url }}'><i class="icon-th-list"></i> More presentations by {{ presentation.get_oembed.author_name }}...</a>
-                    </div>
-                </div>
-                
-                <div class='row'>
-                    <div class='span4'>
-                        &nbsp;
-                    </div>
-                </div>
-                
-                <div class='row'>
-                    <div class='span4'>
-                        <span><i class="icon-calendar"></i> Presented at the following event(s):</span>
-                        <div class='row'>
-                            <div class='span4'>
-                                <ul>
-                                    {% for event in presentation.get_events %}
-                                    <li>{{ event.location.name }} - {{ event.date|date:"F j, Y" }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{% block main_content %}
+
+    <div class='container'>
+
+        <div class='pagination pagination-centered'>
+            {% include 'presentations/_pagination_controller.html' %}
         </div>
-    {% empty %}
-        <div class="alert alert-info">
-            <i class='icon-info-sign '></i>   There are currently no presentations. Why don't you submit one?
+
+        <div class='row section'>
+            {% for presentation in presentations %}
+                <div class='row presentation-row'>
+                    {% display_presentation presentation %}
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
 
-    {% include 'presentations/_pagination_controller.html' %}
-</div>
+        <div class='pagination pagination-centered'>
+            {% include 'presentations/_pagination_controller.html' %}
+        </div>
 
+    </div>
 
-{% endblock container %}
+{% endblock %}
